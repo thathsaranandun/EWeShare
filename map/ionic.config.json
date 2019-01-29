@@ -1,0 +1,7 @@
+{
+  "name": "AppStream-Demo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
