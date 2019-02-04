@@ -24,6 +24,8 @@ export class MapPage {
   }
 
   initMap() {
+
+    let locations=[];
     
     let coord = new google.maps.LatLng(6.9407,79.8796);
     let mapopts : google.maps.MapOptions = {
@@ -82,6 +84,11 @@ export class MapPage {
       markerWindow3.open(this.map,marker3)
 
     })
+
+    /*
+    
+    
+    */
 
   }
 
