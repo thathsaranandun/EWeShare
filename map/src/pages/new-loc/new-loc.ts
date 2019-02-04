@@ -26,10 +26,10 @@ export class NewLocPage {
     var hostlat = 1;
     var hostlng = 1;
     var marker=[];
-    var newMark=true;
-    var loc = 'notset';
+    let newMark:boolean=true;
+    var loc = "notset";
     //adding a new mark
-    while(newMark){
+    if(newMark){
       //send the hostlat and hostlng to map page and create a new map location in map page.
     newMark=false;
     }
