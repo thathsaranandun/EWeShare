@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController,NavParams } from 'ionic-angular';
+import {LocDetailsPage} from '../loc-details/loc-details';
 
 
 
@@ -15,12 +16,17 @@ export class MapPage {
   map: any;
   
 
-  constructor() {
-
+  constructor(public nac:NavController, public navParams: NavParams) {
+      
   }
 
   ionViewDidLoad(){
     this.initMap();
+  }
+
+  loadPage(){
+    console.log("Works");
+    this.nac.push(LocDetailsPage);
   }
 
   initMap() {
@@ -43,11 +49,18 @@ export class MapPage {
     })
 
     var markerWindow = new google.maps.InfoWindow({
-      content:'<h4>Osaka Charging Station</h4><br><p>Port Type:J1770<br>Availability: Available<br>Open Time:24/7</p>'
+      content:'<h4>Charging Station 1</h4><br><p>Port Type:J1770<br>Availability: Available<br>Open Time:24/7</p><input type=submit ng-click="loadPage()" value="View location">'
+    
+    })
+    markerWindow.addListener('mousemove',function(){
+      console.log("works")
+      this.nac.push(LocDetailsPage);
+
     })
 
     marker.addListener('click',function(){
-      markerWindow.open(this.map,marker)
+      //markerWindow.open(this.map,marker)
+      this.nac.push(LocDetailsPage);
 
     })
 
@@ -57,7 +70,35 @@ export class MapPage {
       icon:'../assets/img/map_marker_icon_1 - Copy.png'
 
     })
+
+    var markerWindow2 = new google.maps.InfoWindow({
+      content:'<h4>Charging station 2</h4><br><p>Port Type:J1770<br>Availability: Occupied<br>Open Time:24/7</p><input type=submit value="View location">'
+    })
+
+    marker2.addListener('click',function(){
+      markerWindow2.open(this.map,marker2)
+
+    })
+
+    let marker3 : google.maps.Marker = new google.maps.Marker({
+      map:this.map,
+      position:{lat:6.9395,lng:79.8781},
+      icon:'../assets/img/map_marker_icon_2 - Copy.png'
+
+    })
+
+    var markerWindow3 = new google.maps.InfoWindow({
+      content:'<h4>Charging station 3</h4><br><p>Port Type:J1770<br>Availability: Closed<br>Open Time:24/7</p><input type="submit" value="View Location"[navPush]="LocDetailsPage">'
+    })
+
+    marker3.addListener('click',function(){
+      markerWindow3.open(this.map,marker3)
+
+    })
+
   }
+
+  
 
 
 }
