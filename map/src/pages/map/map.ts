@@ -14,7 +14,7 @@ export class MapPage {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
-  
+  loaded: boolean = true;
 
   constructor(public nac:NavController, public navParams: NavParams) {
   }
@@ -55,11 +55,14 @@ export class MapPage {
     })
 
     google.maps.event.addListener(markerWindow, 'domready', () => {
+      if(this.loaded){
       //now my elements are ready for dom manipulation
       var clickableItem = document.getElementById('clickIt');
       clickableItem.addEventListener('click', () => {
         this.nac.push(LocDetailsPage);
       });
+      this.loaded=true;
+    }
     });
 
     let marker2 : google.maps.Marker = new google.maps.Marker({
@@ -82,7 +85,7 @@ export class MapPage {
       //now my elements are ready for dom manipulation
       var clickableItem = document.getElementById('clickIt2');
       clickableItem.addEventListener('click', () => {
-        this.nac.push(LocDetailsPage);
+       // this.nac.push(LocDetailsPage);
       });
     });
 
@@ -106,7 +109,7 @@ export class MapPage {
       //now my elements are ready for dom manipulation
       var clickableItem = document.getElementById('clickIt3');
       clickableItem.addEventListener('click', () => {
-        this.nac.push(LocDetailsPage);
+        //this.nac.push(LocDetailsPage);
       });
     });
 
