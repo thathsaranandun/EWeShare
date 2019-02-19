@@ -17,17 +17,13 @@ export class MapPage {
   
 
   constructor(public nac:NavController, public navParams: NavParams) {
-      
   }
 
   ionViewDidLoad(){
     this.initMap();
   }
 
-  loadPage(){
-    console.log("Works");
-    this.nac.push(LocDetailsPage);
-  }
+
 
   initMap() {
     
@@ -49,20 +45,22 @@ export class MapPage {
     })
 
     var markerWindow = new google.maps.InfoWindow({
-      content:'<h4>Charging Station 1</h4><br><p>Port Type:J1770<br>Availability: Available<br>Open Time:24/7</p><input type=submit ng-click="loadPage()" value="View location">'
+      content:'<h4>Charging Station 1</h4><br><p>Port Type:J1770<br>Availability: Available<br>Open Time:24/7</p><input type=submit value="View location" id="clickIt">'
     
     })
-    markerWindow.addListener('mousemove',function(){
-      console.log("works")
-      this.nac.push(LocDetailsPage);
-
-    })
+   
 
     marker.addListener('click',function(){
-      //markerWindow.open(this.map,marker)
-      this.nac.push(LocDetailsPage);
-
+      markerWindow.open(this.map,marker)
     })
+
+    google.maps.event.addListener(markerWindow, 'domready', () => {
+      //now my elements are ready for dom manipulation
+      var clickableItem = document.getElementById('clickIt');
+      clickableItem.addEventListener('click', () => {
+        this.nac.push(LocDetailsPage);
+      });
+    });
 
     let marker2 : google.maps.Marker = new google.maps.Marker({
       map:this.map,
@@ -72,13 +70,21 @@ export class MapPage {
     })
 
     var markerWindow2 = new google.maps.InfoWindow({
-      content:'<h4>Charging station 2</h4><br><p>Port Type:J1770<br>Availability: Occupied<br>Open Time:24/7</p><input type=submit value="View location">'
+      content:'<h4>Charging station 2</h4><br><p>Port Type:J1770<br>Availability: Occupied<br>Open Time:24/7</p><input id="clickIt2" type=submit value="View location">'
     })
 
     marker2.addListener('click',function(){
       markerWindow2.open(this.map,marker2)
 
     })
+
+    google.maps.event.addListener(markerWindow2, 'domready', () => {
+      //now my elements are ready for dom manipulation
+      var clickableItem = document.getElementById('clickIt2');
+      clickableItem.addEventListener('click', () => {
+        this.nac.push(LocDetailsPage);
+      });
+    });
 
     let marker3 : google.maps.Marker = new google.maps.Marker({
       map:this.map,
@@ -88,13 +94,21 @@ export class MapPage {
     })
 
     var markerWindow3 = new google.maps.InfoWindow({
-      content:'<h4>Charging station 3</h4><br><p>Port Type:J1770<br>Availability: Closed<br>Open Time:24/7</p><input type="submit" value="View Location"[navPush]="LocDetailsPage">'
+      content:'<h4>Charging station 3</h4><br><p>Port Type:J1770<br>Availability: Closed<br>Open Time:24/7</p><input id="clickIt3" type="submit" value="View Location"[navPush]="LocDetailsPage">'
     })
 
     marker3.addListener('click',function(){
       markerWindow3.open(this.map,marker3)
 
     })
+
+    google.maps.event.addListener(markerWindow3, 'domready', () => {
+      //now my elements are ready for dom manipulation
+      var clickableItem = document.getElementById('clickIt3');
+      clickableItem.addEventListener('click', () => {
+        this.nac.push(LocDetailsPage);
+      });
+    });
 
   }
 
