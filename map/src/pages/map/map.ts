@@ -1,5 +1,9 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage } from 'ionic-angular';
+import { Geolocation,GeolocationOptions,Geoposition } from '@ionic-native/geolocation/ngx';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+
 
 
 
@@ -13,11 +17,30 @@ export class MapPage {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
-  
+  curentLocLat;
+  currentLocLng;
+  options : GeolocationOptions;
+  currentPos : Geoposition;
 
-  constructor() {
+  constructor(private geolocation: Geolocation) {
+    
 
   }
+
+  getUserPosition(){
+    this.options = {
+        enableHighAccuracy : true
+    };
+
+    this.geolocation.getCurrentPosition(this.options).then((pos : Geoposition) => {
+
+        this.currentPos = pos;      
+        console.log(pos);
+
+    },(err : PositionError)=>{
+        console.log("error : " + err.message);
+    });
+}
 
   ionViewDidLoad(){
     this.initMap();
@@ -25,9 +48,12 @@ export class MapPage {
 
   initMap() {
 
+    this.getUserPosition();
+
+
     let locations=[];
     
-    let coord = new google.maps.LatLng(6.9407,79.8796);
+    let coord = new google.maps.LatLng(this.currentPos.coords.latitude,this.currentPos.coords.longitude);
     let mapopts : google.maps.MapOptions = {
       center: coord,
       zoom:18,

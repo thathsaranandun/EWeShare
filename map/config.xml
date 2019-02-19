@@ -88,4 +88,5 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-wkwebview-engine" spec="https://github.com/ionic-team/cordova-plugin-wkwebview-engine" />
     <engine name="android" spec="7.1.4" />
+    <plugin name="cordova-plugin-geolocation" spec="4.0.1" />
 </widget>

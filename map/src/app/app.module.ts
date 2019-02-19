@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-
+import{NewLocPage} from '../pages/new-loc/new-loc';
 import { MusicPage } from '../pages/music/music';
 import { NewsPage } from '../pages/news/news';
 import { VideoPage } from '../pages/video/video';
@@ -20,6 +20,8 @@ import {  MusicPop } from '../pages/music/music-popOver/popover';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Geolocation, GeolocationOriginal } from '@ionic-native/geolocation';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ParallaxHeaderDirective,
     Profile,
     MapPage,
+    NewLocPage,
     Intro
   ],
   imports: [
@@ -54,6 +57,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MusicPop,
     Profile,
     MapPage,
+    NewLocPage,
     Intro
 
   ],
@@ -61,6 +65,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
+    
   ]
 })
 export class AppModule {}
