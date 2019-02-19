@@ -1,0 +1,68 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Customer Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item-divider color="danger">Personal Details</ion-item-divider>
+
+    <ion-item>
+      <ion-label>First Name</ion-label>
+        <ion-input type="text" [(ngModel)]="user.name" name="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Last Name</ion-label>
+      <ion-input type="text" ></ion-input>
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-label>Address</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+
+    <hr>
+     <div *ngFor="let user of users">
+         <div class="well">
+             <ul class="list-group">
+                 <li class="list-group-item">Name: {{ user.name }}</li>
+                 <li class="list-group-item">ID: {{ user.id }}</li>
+             </ul>
+             <br>
+         </div>
+     </div>
+
+    </ion-list>
+</ion-content>
+
+<ion-footer>
+  <button ion-button block color="danger"(click)="onSubmit()"  [navPush]="login" >Sign Up</button>
+</ion-footer>

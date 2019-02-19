@@ -11,15 +11,18 @@ import { VideoPage } from '../pages/video/video';
 import { Intro } from '../pages/intro/intro';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Login } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
 import { MapPage } from '../pages/map/map';
 import { Profile } from '../pages/profile/profile';
 import { VimeoVideo } from '../pages/videos/vimeo';
 import {  YoutubeVideo } from '../pages/videos/youtube';
 import {  MusicPop } from '../pages/music/music-popOver/popover';
+import { DataService } from './services/data.service';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -35,10 +38,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ParallaxHeaderDirective,
     Profile,
     MapPage,
-    Intro
+    Intro,
+    SignupPage
+    
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -54,11 +60,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MusicPop,
     Profile,
     MapPage,
-    Intro
+    Intro,
+    SignupPage
 
   ],
   providers: [
     StatusBar,
+    DataService,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
