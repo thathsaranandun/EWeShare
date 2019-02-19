@@ -18,6 +18,7 @@ import { VimeoVideo } from '../pages/videos/vimeo';
 import {  YoutubeVideo } from '../pages/videos/youtube';
 import {  MusicPop } from '../pages/music/music-popOver/popover';
 import { DataService } from './services/data.service';
+import { LocDetailsPage } from '../pages/loc-details/loc-details';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -39,7 +40,8 @@ import { HttpModule } from '@angular/http';
     Profile,
     MapPage,
     Intro,
-    SignupPage
+    SignupPage,
+    LocDetailsPage
     
   ],
   imports: [
@@ -61,7 +63,8 @@ import { HttpModule } from '@angular/http';
     Profile,
     MapPage,
     Intro,
-    SignupPage
+    SignupPage,
+    LocDetailsPage
 
   ],
   providers: [
