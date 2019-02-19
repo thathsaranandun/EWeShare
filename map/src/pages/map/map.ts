@@ -43,7 +43,7 @@ export class MapPage {
     })
 
     var markerWindow = new google.maps.InfoWindow({
-      content:'<h4>Charging Station 1</h4><br><p>Port Type:J1770<br>Availability: Available<br>Open Time:24/7</p>'
+      content:'<h4>Charging Station 1</h4><br><p>Port Type:J1770<br>Availability: Available<br>Open Time:24/7</p><input type=submit value="View location">'
     })
 
     marker.addListener('click',function(){
@@ -59,7 +59,7 @@ export class MapPage {
     })
 
     var markerWindow2 = new google.maps.InfoWindow({
-      content:'<h4>Charging station 2</h4><br><p>Port Type:J1770<br>Availability: Occupied<br>Open Time:24/7</p>'
+      content:'<h4>Charging station 2</h4><br><p>Port Type:J1770<br>Availability: Occupied<br>Open Time:24/7</p><input type=submit value="View location">'
     })
 
     marker2.addListener('click',function(){
@@ -75,7 +75,7 @@ export class MapPage {
     })
 
     var markerWindow3 = new google.maps.InfoWindow({
-      content:'<h4>Charging station 3</h4><br><p>Port Type:J1770<br>Availability: Closed<br>Open Time:24/7</p>'
+      content:'<h4>Charging station 3</h4><br><p>Port Type:J1770<br>Availability: Closed<br>Open Time:24/7</p><input type=submit value="View location">'
     })
 
     marker3.addListener('click',function(){
