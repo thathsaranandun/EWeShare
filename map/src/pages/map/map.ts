@@ -14,6 +14,8 @@ export class MapPage {
 
   @ViewChild('map') mapElement: ElementRef;
   map: any;
+  longitude: any;
+  latitute: any;
   loaded: boolean = true;
 
   constructor(public nac:NavController, public navParams: NavParams) {
