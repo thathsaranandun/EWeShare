@@ -11,7 +11,7 @@
               
             <ion-label color="myWhite" style="font-size:12px" stacked>Username</ion-label>
 
-            <ion-input type="text" placeholder="Enter Username"></ion-input>
+            <ion-input type="text" [(ngModel)]="username" placeholder="Enter Username"></ion-input>
         
         </ion-item>
 
@@ -22,7 +22,7 @@
               
             <ion-label color="myWhite" style="font-size:12px" stacked>Password</ion-label>
 
-            <ion-input color="myWhite" type="password" placeholder="Enter Password"></ion-input>
+            <ion-input [(ngModel)]="password" type="password" placeholder="Enter Password"></ion-input>
         
         </ion-item>
 
@@ -33,7 +33,7 @@
 
 
   <div text-center>
-      <button class="btnWidth" ion-button color="secondary" round [navPush]="nextPage">Login</button>
+      <button class="btnWidth" ion-button color="secondary" round (click)="loginUser()">Login</button>
   </div>
 
 
