@@ -20,7 +20,6 @@ import {  MusicPop } from '../pages/music/music-popOver/popover';
 import { DataService } from './services/data.service';
 import { LocDetailsPage } from '../pages/loc-details/loc-details';
 
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 //import { HttpModule } from '@angular/http';
