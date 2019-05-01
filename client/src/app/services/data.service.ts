@@ -14,15 +14,15 @@ export class DataService {
 
 
   getUser(name:string){
-    return this.http.get('http://localhost:3000/api/users/'+name)
+    return this.http.get('http://localhost:5000/api/users/'+name)
   }
 
   postUser(name:string){
-    return this.http.post('http://localhost:3000/api/user',{'name':name})
+    return this.http.post('http://localhost:5000/api/user',{'name':name})
   }
 
   postSignUp(fname:string,lname:string,username:string,email:string,address:string,password:string){
-    return this.http.post('http://localhost:3000/api/newuser',{
+    return this.http.post('http://localhost:5000/api/newuser',{
       'fname':fname,
       'lname':lname,
       'username':username,
@@ -33,7 +33,7 @@ export class DataService {
   }
 
   postLogIn(name:string,password:string){
-    return this.http.post('http://localhost:3000/api/userlogin',{
+    return this.http.post('http://localhost:5000/api/userlogin',{
       'name':name,
       'password':password
     })
