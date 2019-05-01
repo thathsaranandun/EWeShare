@@ -1,10 +1,4 @@
-from flask import request
 import DatabaseConnection
-import mysql.connector
-from hashlib import md5
-from mysql.connector import Error
-import pymysql
-
 
 class LogIn:
     # class attribute

@@ -1,6 +1,3 @@
-import flask
-from flask import request
-
 import DatabaseConnection
 
 
@@ -25,6 +22,7 @@ class SignUp:
         cur = con.cursor()
         cur.execute("SELECT COUNT(1) FROM users WHERE username = %s;", [self.username])
         row_count = cur.rowcount
+        con.commit()
         if row_count == 1:  #checking the usernam exist
             return 'Username is already exists'
         else:
@@ -36,6 +34,8 @@ class SignUp:
                     if self.email[i] == '@':
                         j=1
                 if j ==1:   #email validation
+                    con = DatabaseConnection.connectdb()
+                    cur = con.cursor()
                     cur.execute(
                     """INSERT INTO
                         users (
