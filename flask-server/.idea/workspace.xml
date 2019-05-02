@@ -202,7 +202,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="FlaskServer" type="Python.FlaskServer">
+    <configuration name="FlaskServer" type="Python.FlaskServer" factoryName="Flask server">
       <module name="FlaskServer" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
       <option name="targetType" value="PATH" />

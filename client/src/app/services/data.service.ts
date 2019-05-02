@@ -12,6 +12,19 @@ interface User {
 export class DataService {
   constructor(private http: HttpClient) {}
 
+  /**
+   * Send prediction details to backend and get predicted location details
+   * @param time 
+   * @param kwh 
+   * @param chargerType 
+   */
+  postPrediction(time:number,kwh:number,chargerType:number){
+    return this.http.post('http://127.0.0.1:5000/api/prediction',{
+        'time':time,
+        'kwh':kwh,
+        'chargerType':chargerType
+    });
+  }
 
   getUser(name:string){
     return this.http.get('http://localhost:5000/api/users/'+name)
