@@ -19,6 +19,7 @@ export class MapPage {
   loaded: boolean = true;
 
   constructor(public nac:NavController, public navParams: NavParams) {
+    
   }
 
   ionViewDidLoad(){

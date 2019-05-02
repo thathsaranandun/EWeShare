@@ -27,6 +27,10 @@ export class Login {
   }
 
   loginUser(){
+    this.navCtrl.push(MapPage,{
+      username:'g@gmail.com'
+    });
+    /**
     if(/^[a-zA-Z0-9]+$/.test(this.username)){
       //Validate
       this.dataService.postLogIn(this.username,this.password).subscribe((data:boolean) => {
@@ -53,6 +57,7 @@ export class Login {
     }else{
       this.alert('Error','Invalid Login details. Please enter again.');
     }
+    */
 
   }
 
