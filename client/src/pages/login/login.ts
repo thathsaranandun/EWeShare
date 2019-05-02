@@ -34,7 +34,7 @@ export class Login {
         this.enteredDataStatus=data;
         console.log('enteredDataStatus:'+this.enteredDataStatus)
         if(this.enteredDataStatus==true){
-          this.navCtrl.push(MapPage,{
+          this.navCtrl.push(TabsPage,{
             username:this.username
           });
   
