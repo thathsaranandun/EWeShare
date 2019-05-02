@@ -55,3 +55,28 @@ class predictor:
         print(singlePred)
 
         return singlePred
+
+        # Validation of User Inputs
+        # returns an array of validation details
+
+    def validate(self):
+        validityString = "Please Enter a number, Not a word"
+        validityTimeRange = "Please Enter a Time less than 31 minutes"
+
+        """
+        if(self.time.isdigit() and self.kwh.isdigit()):
+            print('All the Input Values are Numbers')
+        else:
+            print ('Input Contains String Values, Invalid!')
+            message = {"errorMsg": validityString, "valid": False}
+            return message
+        """
+        if (int(self.time) > 30):
+            print('Input Time Range is Invalid!')
+            message = {"errorMsg": validityTimeRange,"valid": False}
+            print(message)
+            return message
+        else:
+            message = {"valid": True}
+            return message
+

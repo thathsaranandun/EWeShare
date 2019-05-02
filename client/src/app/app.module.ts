@@ -24,6 +24,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 //import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { PredictionPage } from '../pages/prediction/prediction';
+import { PredmapPage } from '../pages/predmap/predmap';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { HttpClientModule } from '@angular/common/http';
     MapPage,
     Intro,
     SignupPage,
-    LocDetailsPage
+    LocDetailsPage,
+    PredictionPage,
+    PredmapPage
     
   ],
   imports: [
@@ -64,7 +68,9 @@ import { HttpClientModule } from '@angular/common/http';
     MapPage,
     Intro,
     SignupPage,
-    LocDetailsPage
+    LocDetailsPage,
+    PredictionPage,
+    PredmapPage
 
   ],
   providers: [
