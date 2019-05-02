@@ -72,20 +72,13 @@ def app_result():
     print("Received the Values....")
     data = request.get_json(force=True)
     print('Time Range:'+data['time']+' kwh:'+data['kwh']+' charger-type:'+data['chargerType'])
-    print('Input is being Validated')
-    # Prediction Obj Created to get the Prediction Result
+    print("Prediction In Pursuite...")
+    #Prediction Obj Created to get the Prediction Result
     predictionObj = locationPredictor.predictor(data['time'],data['kwh'],data['chargerType'])
-    validation = predictionObj.validate()
+    predictionResult = predictionObj.predict()
 
-    if(validation['valid']):
-        print("Prediction In Pursuite...")
-        #predictionResult = predictionObj.predict()
-        print('Prediction Sending...')
-        #return json.dumps({"newdata": predictionResult[0],"location":{"lat":56.4881,"lon":3.0146},"locdetails":'Ardler Complex,Dundee'})
-        location ="Ardler Complex,Dundee"
-        return json.dumps({"location":{"lat":56.4881,"lon":3.0146},"locdetails":location,"valid":validation['valid']})
-    else:
-        return json.dumps(validation)
+    print('Prediction Sending...')
+    return json.dumps({"newdata": predictionResult[0]})
 
 if __name__ == '__main__':
     app.run()

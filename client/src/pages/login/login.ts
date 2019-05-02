@@ -27,7 +27,6 @@ export class Login {
   }
 
   loginUser(){
-  
     if(/^[a-zA-Z0-9]+$/.test(this.username)){
       //Validate
       this.dataService.postLogIn(this.username,this.password).subscribe((data:boolean) => {
@@ -55,7 +54,6 @@ export class Login {
       this.alert('Error','Invalid Login details. Please enter again.');
     }
 
-        
   }
 
   alert(title:string,message:string){
