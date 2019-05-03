@@ -33,7 +33,7 @@ export class PredictionPage {
     //Display the loader
     const loader = this.loadingCtrl.create({
       content: "Please wait...",
-      duration: 100000
+      duration: 10000
     });
     loader.present();
 
@@ -42,7 +42,9 @@ export class PredictionPage {
       console.log(data);
       if(data.valid){
         alert("Prediction Was Successful");
-        console.log("1)"+data.location.lat);
+        console.log(data.location.lat);
+       
+       
         this.navCtrl.push(PredmapPage,{
           lat:data.location.lat,
           lon:data.location.lon,
@@ -70,7 +72,7 @@ export class PredictionPage {
   presentLoading() {
     const loader = this.loadingCtrl.create({
       content: "Please wait...",
-      duration: 100000
+      duration: 10000
     });
     loader.present();
     return loader;

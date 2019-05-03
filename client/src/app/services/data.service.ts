@@ -19,7 +19,7 @@ export class DataService {
    * @param chargerType 
    */
   postPrediction(time:number,kwh:number,chargerType:number){
-    return this.http.post('http://127.0.0.1:5000/api/prediction',{
+    return this.http.post('http://localhost:5000/api/prediction',{
         'time':time,
         'kwh':kwh,
         'chargerType':chargerType

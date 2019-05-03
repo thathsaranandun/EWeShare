@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
+import { DataService } from '../../app/services/data.service';
 
 /**
  * Generated class for the ProfilePage page.
@@ -15,22 +16,48 @@ import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angul
 })
 export class Profile{
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+  userFname:string='';
+  userLname:string='';
+  userEmail:string='';
+  userName:string='';
+  userAddress:string='';
+  userPassword:string='';
+
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public dataService:DataService) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Profile');
+    console.log('ionViewDidLoad SignupPage');
   }
 
-  showToast(position: string) {
-    let toast = this.toastCtrl.create({
-      message: 'Mmmm, I think I like it',
-      duration: 2000,
-      position: position
-    })
 
-    toast.present(toast);
-  }
+ /*    onSubmit(){
+        this.dataService.addUser(this.user).subscribe(user => {
+            console.log(user);
+            this.users.unshift(user);
+        });
+    } */
 
+    signup(){
+      /* this.dataService.getUser(this.username).subscribe((data:any) =>{
+        this.dbuser=data.dbuser;
+      }); */
+      this.dataService.postSignUp(this.userFname,this.userLname,this.userName,this.userEmail,this.userAddress,this.userPassword).subscribe((data:any) => {
+      })
+      this.userFname='';
+      this.userLname='';
+      this.userEmail='';
+      this.userName='';
+      this.userAddress='';
+      this.userPassword='';
+      alert("User Registered Successfully.")
+      
+    }
 
 }
+
+
+
