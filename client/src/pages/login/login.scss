@@ -1,75 +1,149 @@
 page-login {
-    .bg-image{
-        background-image: url(../../assets/img/img/car34.jpg);
-        background-repeat:no-repeat;
-        -webkit-background-size:cover;
-        -moz-background-size:cover;
-        -o-background-size:cover;
-        background-size:cover;
-        background-position:center;
-    }
+  ion-input{
+    color: white;
+  }
+  .bg-image{
+    //background-image: url(../../assets/img/img/car34.jpg);
+    background-color: #25274D;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    //background-image: url(../../assets/img/img/car33.jpg);
+    background-color: #25274D;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    //CSS
 
-    .no-scroll .scroll-content{
-        overflow: hidden;
-    }
+  }
+  .no-scroll .scroll-content{
+    overflow: hidden;
+  }
 
-    .logo{
-        display: block;
-        margin: auto;
-        width: 50%;
-        margin-top: 2vh;
-    }
+  .logo{
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    margin-top: auto;
+    opacity: 0.8;
 
-
-    .label{
-        background-color: rgba(255,255,255,0.0);
-
-    }
-
-
-    .list{
-        width:50%;
-        position: absolute;
-        right:100px;
-        margin:auto;
-    }
+  }
 
 
-    .text{
-        text-align:center;
-        margin-top:30vh;
-    }
+  .label{
+    background-color: rgba(0,0,0,0.0);
+
+  }
 
 
-    .btnWidth{
-        width:50%;
-  
-    }
-
-    .myButton{
-        margin-top:8vh;
-        width:74%;
-
-    }
+  .list{
+    width:50%;
+    position: absolute;
+    right:100px;
+    margin:auto;
+  }
 
 
-    .fb-button{
-       position: absolute;
-       left:60px;
-       margin-top:1.4vh;
-       width: 30%;
-       height: auto;
-    }
+  .text{
+    text-align:center;
+  }
+
+  .btn_1{
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .text_filed_div{
+    padding-top: auto;
+    padding-bottom:auto;
+    position: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .login_botten_div{
+    max-width: 400px;
+    width: 100%;
+    margin-top:5%;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .button_div{
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .social_button{
+    display: flex;
+    max-width: 162px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .social_icon{
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .social_img{
+    width: 50px;
+    height: 50px;
+  }
+  .login_form_div{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+  }
+  .login_fields{
+    position: center;
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  //---------responsive for all devises----
+  //for mobile devises
+
+  //for desktops
+
+  /*
+      .twitter-button{
+
+         position: absolute;
+         right:60px;
+         margin-top:1.4vh;
+         width: 30%;
+         height: auto;
+      }
+
+      .fb-button{
+         position: absolute;
+         left:60px;
+         margin-top:1.4vh;
+         width: 30%;
+         height: auto;
+      }
 
 
+      .btnWidth{
+          width:50%;
 
-    .twitter-button{
-        
-       position: absolute;
-       right:60px;
-       margin-top:1.4vh;
-       width: 30%;
-       height: auto;
-    }
+      }
 
+      .myButton{
+          margin-top:8vh;
+          width:74%;
+
+      }
+      */
 }

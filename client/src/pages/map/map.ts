@@ -28,7 +28,7 @@ export class MapPage {
 
 
   initMap() {
-    
+
     let coord = new google.maps.LatLng(6.9407,79.8796);
     let mapopts : google.maps.MapOptions = {
       center: coord,
@@ -117,7 +117,7 @@ export class MapPage {
 
   }
 
-  
+
 
 
 }
