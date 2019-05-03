@@ -26,6 +26,17 @@ export class DataService {
     });
   }
 
+  postAddSite(address:string,latitude:string,longitude:string,userId:number){
+    return this.http.post('http://127.0.0.1:5000/api/addsite',{
+        'address':address,
+        'latitude':latitude,
+        'longitude':longitude,
+        'userId':userId
+    });
+  }
+
+  
+
   getUser(name:string){
     return this.http.get('http://localhost:5000/api/users/'+name)
   }

@@ -19,6 +19,7 @@ import {  YoutubeVideo } from '../pages/videos/youtube';
 import {  MusicPop } from '../pages/music/music-popOver/popover';
 import { DataService } from './services/data.service';
 import { LocDetailsPage } from '../pages/loc-details/loc-details';
+import {AddSitePage} from '../pages/add-site/add-site'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -41,6 +42,7 @@ import { PredmapPage } from '../pages/predmap/predmap';
     ParallaxHeaderDirective,
     Profile,
     MapPage,
+    AddSitePage,
     Intro,
     SignupPage,
     LocDetailsPage,
@@ -65,6 +67,7 @@ import { PredmapPage } from '../pages/predmap/predmap';
     VimeoVideo,
     MusicPop,
     Profile,
+    AddSitePage,
     MapPage,
     Intro,
     SignupPage,

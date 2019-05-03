@@ -25,6 +25,7 @@ CORS(app, support_credentials=True)
 def hello_world():
     return 'Hello World This is Me. Yes Me!'
 
+
 @app.route('/api/userlogin', methods=['POST'])
 @cross_origin(supports_credentials=True)
 def userlogin():
@@ -38,6 +39,7 @@ def userlogin():
         user = LogIn.LogIn(username,password)
         valid = user.login()
         return valid
+
 
 @app.route('/api/addsite', methods=['POST'])
 @cross_origin(supports_credentials=True)
@@ -80,10 +82,6 @@ def newuser():
         success = register.signup()
         print(success)
         return json.dumps({'fname': fname})
-
-
-
-
 
 
 @app.route('/api/prediction', methods = ['POST'])
