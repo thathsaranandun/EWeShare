@@ -1,2 +1,3 @@
-flask-server/.idea
-flask-server/__pycache__
+flask-server/.idea/
+flask-server/__pycache__/
+
