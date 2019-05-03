@@ -8,6 +8,7 @@ import pymysql
 
 import json
 
+import AddSite
 import SignUp
 import locationPredictor
 import LogIn
@@ -37,6 +38,24 @@ def userlogin():
         user = LogIn.LogIn(username,password)
         valid = user.login()
         return valid
+
+@app.route('/api/addsite', methods=['POST'])
+@cross_origin(supports_credentials=True)
+def addsite():
+    if request.method == 'POST':
+        data = request.get_json(force=True)
+        address = data['address']
+        print('address retrieved from CLIENT: ' + address)
+        latitude = data['latitude']
+        print('latitude retrieved from CLIENT: ' + latitude)
+        longitude = data['longitude']
+        print('longitude retrieved from CLIENT: ' + longitude)
+        userId = data['userId']
+        print('userId retrieved from CLIENT: ' + userId)
+        print('Validating login details...')
+        site = AddSite.AddSite(address,latitude,longitude,userId)
+        addnewsite = site.addSite()
+        return addnewsite
 
 
 @app.route('/api/newuser', methods=['POST'])
