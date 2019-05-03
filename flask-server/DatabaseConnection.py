@@ -1,4 +1,5 @@
 import pymysql
+from pymysql.connections import Connection
 
 host='localhost'
 user = 'root'
