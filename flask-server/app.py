@@ -1,10 +1,6 @@
-#from flask import Flask,request
 from flask import Flask,request
 from flask_cors import CORS,cross_origin
-import mysql.connector
-from hashlib import md5
-from mysql.connector import Error
-import pymysql
+
 
 import json
 
