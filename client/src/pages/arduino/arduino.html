@@ -14,8 +14,40 @@
 
 
 <ion-content padding>
-  <p>Energy consumption: {{energy_c}}</p>
-  <br>
-  <p>Power Consumption: {{power_c}}</p>
+
+  <ion-list>
+      <ion-item-divider>Charging Statistics</ion-item-divider>
+  
+      <ion-item>
+        <ion-label>Charger Type</ion-label>
+          <ion-input type="text" name="name" [(ngModel)]="charger_t"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label >Charging Speed</ion-label>
+        <ion-input type="text" [(ngModel)]="charging_s" ></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Energy consumption</ion-label>
+        <ion-input type="text" [(ngModel)]="energy_c"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Power Consumption</ion-label>
+        <ion-input type="text" [(ngModel)]="power_c"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-button> Start </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-button> Stop </ion-button>
+      </ion-item>
+  
+  </ion-list>
+  
+  
 
 </ion-content>
