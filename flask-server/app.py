@@ -33,8 +33,9 @@ def userlogin():
         print('password retrieved from CLIENT: ' + password)
         print('Validating login details...')
         user = LogIn.LogIn(username,password)
-        valid = user.login()
-        return valid
+        loggeduser = user.login()
+        print('logged user json object: ' + loggeduser)
+        return loggeduser
 
 
 @app.route('/api/addsite', methods=['POST'])

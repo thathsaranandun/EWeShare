@@ -3,7 +3,6 @@ import { TabsPage } from './../tabs/tabs';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { DataService } from '../../app/services/data.service';
-import { MapPage } from '../map/map';
 
 
 @IonicPage()
@@ -17,7 +16,8 @@ export class Login {
   signPage=SignupPage;
   username:string='';
   password:string='';
-  enteredDataStatus:boolean=false;
+  enteredDataStatus:string='false';
+  userID:number=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public dataService:DataService,public alertCtrl:AlertController) {
   }
@@ -29,13 +29,15 @@ export class Login {
   loginUser(){
     if(/^[a-zA-Z0-9]+$/.test(this.username)){
       //Validate
-      this.dataService.postLogIn(this.username,this.password).subscribe((data:boolean) => {
+      this.dataService.postLogIn(this.username,this.password).subscribe((data:any) => {
         console.log(data);
-        this.enteredDataStatus=data;
+        this.enteredDataStatus=data.valid;
+        this.userID=data.userid;
+        console.log('User ID:'+this.userID)
         console.log('enteredDataStatus:'+this.enteredDataStatus)
-        if(this.enteredDataStatus==true){
+        if(this.enteredDataStatus=='true'){
           this.navCtrl.push(TabsPage,{
-            username:this.username
+            userID:this.userID
           });
   
         }else{

@@ -1,5 +1,5 @@
 import DatabaseConnection
-
+import json
 
 class LogIn:
     # class attribute
@@ -14,6 +14,7 @@ class LogIn:
 
         # Connect to the database
         connection = DatabaseConnection.connection
+        valid='false';
 
         try:
             with connection.cursor() as cursor:
@@ -25,20 +26,24 @@ class LogIn:
                         if row ['username'] == self.username:
                             if row ['password'] == self.password:
                                 print("password is matching")
-                                return 'true'
+                                valid='true'
+                                return json.dumps({'valid':valid,'userid':row['userId']})
                             else:
                                 print("invalid password")
-                                return 'false'
+                                return json.dumps({'valid':valid})
                         else:
                             print("user not exist")
-                            return 'false'
+                            return json.dumps({'valid': valid})
 
                 except:
                     print("Oops! Something wrong")
+                    return json.dumps({'valid': valid})
 
             connection.commit()
-        finally:
-            connection.close()
+        except:
+            print('Connection to db failed')
+        #finally:
+        #    connection.close()
 
 
 
