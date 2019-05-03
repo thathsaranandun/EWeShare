@@ -1,16 +1,12 @@
-#from flask import Flask,request
-from flask import Flask,request
-from flask_cors import CORS,cross_origin
-import mysql.connector
-from hashlib import md5
-from mysql.connector import Error
-import pymysql
-
 import json
-
+import LogIn
 import SignUp
 import locationPredictor
-import LogIn
+
+from flask import Flask, request
+from flask_cors import CORS, cross_origin
+
+
 
 app = Flask(__name__)
 CORS(app, support_credentials=True)
