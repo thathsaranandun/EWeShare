@@ -15,4 +15,35 @@
 
 <ion-content padding>
 
+    <ion-list>
+        <ion-item-divider color="">Charging Statistics</ion-item-divider>
+    
+        <ion-item>
+          <ion-label>Charger Type</ion-label>
+            <ion-input type="text" [(ngModel)]="type"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label >Charging Speed</ion-label>
+          <ion-input type="text" [(ngModel)]="speed" ></ion-input>
+        </ion-item>  
+        
+        <ion-item>
+          <ion-label>Power Consumption</ion-label>
+          <ion-input type="text" [(ngModel)]="consumption"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Time Spent</ion-label>
+            <ion-input type="text" [(ngModel)]="time"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-button></ion-button>
+        </ion-item>
+
+
+    
+      </ion-list>
+
 </ion-content>
