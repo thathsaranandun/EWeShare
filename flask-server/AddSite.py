@@ -12,7 +12,7 @@ class AddSite:
         self.longitude = longitude
         self.userid = userid
 
-    def addSite(self):
+    def addsite(self):
 
         con = DatabaseConnection.connectdb()
         cur = con.cursor()

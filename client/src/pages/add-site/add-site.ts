@@ -21,6 +21,7 @@ export class AddSitePage {
   latitude:string='';
   longitude:string='';
   userId:number=1;
+  verify:string='';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataService:DataService) {
   }
@@ -31,10 +32,13 @@ export class AddSitePage {
 
   addsite(){
     this.dataService.postAddSite(this.address,this.latitude,this.longitude,this.userId).subscribe((data:any) => {
+      this.verify=data.done
+      console.log(data.done)
     })
     this.address='';
     this.latitude='';
     this.longitude='';
+    this.verify='';
     alert("Site added successfully.")
     
 }

@@ -55,9 +55,8 @@ def addsite():
         userId = data['userId']
         print('userId retrieved from CLIENT: ' + str(userId))
         print('Adding site details...')
-        site = AddSite.AddSite(address,latitude,longitude,userId)
-        addnewsite = site.addSite()
-        done = 'Added successfully'
+        site = AddSite.AddSite(address, latitude, longitude, userId)
+        done = site.addsite()
         print('Site added successfully.')
         return json.dumps({'done':done})
 
