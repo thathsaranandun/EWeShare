@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { DataService } from '../../app/services/data.service';
 
 
@@ -23,7 +23,7 @@ export class AddSitePage {
   userId:number=1;
   verify:string='';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService:DataService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService:DataService, public alertCtrl:AlertController) {
   }
 
   ionViewDidLoad() {
@@ -34,13 +34,22 @@ export class AddSitePage {
     this.dataService.postAddSite(this.address,this.latitude,this.longitude,this.userId).subscribe((data:any) => {
       this.verify=data.done
       console.log(data.done)
+      this.alert("Done",this.verify)
     })
     this.address='';
     this.latitude='';
     this.longitude='';
     this.verify='';
-    alert("Site added successfully.")
     
+    
+}
+alert(title:string,message:string){
+  let alert = this.alertCtrl.create({
+    title: title,
+    subTitle: message,
+    buttons: ['OK']
+  });
+  alert.present();
 }
 
 }
