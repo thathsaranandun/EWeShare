@@ -14,5 +14,32 @@
 
 
 <ion-content padding>
+    <ion-list>
+        <ion-item-divider color="danger">Add you charging site</ion-item-divider>
+    
+        <ion-item>
+          <ion-label>Address</ion-label>
+            <ion-input type="text" name="name" [(ngModel)]="address"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label >Latitude</ion-label>
+          <ion-input type="text" [(ngModel)]="latitude" ></ion-input>
+        </ion-item>
+    
+    
+    
+        <ion-item>
+          <ion-label>Longitude</ion-label>
+          <ion-input type="email" [(ngModel)]="longitude"></ion-input>
+        </ion-item>
+    
+      </ion-list>
+    
+    
 
 </ion-content>
+
+<ion-footer>
+    <button ion-button (click)="addsite()">Add Site</button>
+  </ion-footer>

@@ -53,11 +53,13 @@ def addsite():
         longitude = data['longitude']
         print('longitude retrieved from CLIENT: ' + longitude)
         userId = data['userId']
-        print('userId retrieved from CLIENT: ' + userId)
-        print('Validating login details...')
+        print('userId retrieved from CLIENT: ' + str(userId))
+        print('Adding site details...')
         site = AddSite.AddSite(address,latitude,longitude,userId)
         addnewsite = site.addSite()
-        return addnewsite
+        done = 'Added successfully'
+        print('Site added successfully.')
+        return json.dumps({'done':done})
 
 
 @app.route('/api/newuser', methods=['POST'])

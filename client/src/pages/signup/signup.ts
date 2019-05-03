@@ -42,7 +42,7 @@ export class SignupPage {
         });
     } */
 
-    signup(){
+  signup(){
       /* this.dataService.getUser(this.username).subscribe((data:any) =>{
         this.dbuser=data.dbuser;
       }); */
@@ -56,6 +56,6 @@ export class SignupPage {
       this.userPassword='';
       alert("User Registered Successfully.")
       
-    }
+  }
 
 }

@@ -6,11 +6,11 @@ class AddSite:
     category = "Add Charging Site Class"
 
     # instance attribute
-    def __init__(self, address, latitude, longitude, userId):
+    def __init__(self, address, latitude, longitude, userid):
         self.address = address
         self.latitude = latitude
         self.longitude = longitude
-        self.userId = userId
+        self.userid = userid
 
     def addSite(self):
 
@@ -22,8 +22,8 @@ class AddSite:
                     address,
                     latitude,
                     longitude,
-                    userid)
+                    userId)
             VALUES (%s,%s,%s,%s)""",
-            (self.address, self.latitude, self.longitude, self.userId))
+            (self.address, self.latitude, self.longitude, self.userid))
         con.commit()
         return 'Charging site added successfully.'
