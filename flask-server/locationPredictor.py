@@ -1,4 +1,5 @@
 # Load libraries
+import DatabaseConnection
 import pandas
 from pandas.plotting import scatter_matrix
 #import matplotlib.pyplot as plt
@@ -55,3 +56,47 @@ class predictor:
         print(singlePred)
 
         return singlePred
+
+    # Validation of User Inputs
+    # returns an array of validation details
+    def validate(self):
+        validityString = "Please Enter a number, Not a word"
+        validityTimeRange = "Please Enter a Time less than 31 minutes"
+
+        """
+        if(self.time.isdigit() and self.kwh.isdigit()):
+            print('All the Input Values are Numbers')
+        else:
+            print ('Input Contains String Values, Invalid!')
+            message = {"errorMsg": validityString, "valid": False}
+            return message
+        """
+        if (int(self.time) > 30):
+            print('Input Time Range is Invalid!')
+            message = {"errorMsg": validityTimeRange, "valid": False}
+            print(message)
+            return message
+        else:
+            message = {"valid": True}
+            return message
+
+        #Getting the location details from database
+    def locationDetails(self,predId):
+        # Connect to the database
+        connection = DatabaseConnection.connection
+
+        try:
+            with connection.cursor() as cursor:
+                sql = "SELECT * FROM sites WHERE siteid = %s"
+                try:
+                    cursor.execute(sql, predId)
+                    result = cursor.fetchall()
+                    for row in result:
+                        print('in location predictor'+ row['address'])
+                        message = {"lat":row['latitude'],"lon":row['longitude'],"address":row['address']}
+                        return message
+                except:
+                    print("DB Querry Failed!")
+
+        except:
+            print('Connection to db failed!')
