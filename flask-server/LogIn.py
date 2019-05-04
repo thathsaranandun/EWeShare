@@ -1,4 +1,4 @@
-from flask import request
+from flask import request, jsonify
 import DatabaseConnection
 import mysql.connector
 from hashlib import md5
@@ -26,7 +26,12 @@ class LogIn:
                 for row in cur.fetchall():
                     if self.password == row[0]:
                         print('Correct password. Valid login details')
-                        return 'true'
+
+                        cur.execute("SELECT * FROM users WHERE username = %s;", [self.username])
+                        row = cur.fetchone()
+                        resp = jsonify(row)
+                        resp.status_code = 200
+                        return resp
                     else:
                         print('Incorrect password.')
                         return 'false'

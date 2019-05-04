@@ -17,7 +17,17 @@ import { Profile } from '../pages/profile/profile';
 import { VimeoVideo } from '../pages/videos/vimeo';
 import {  YoutubeVideo } from '../pages/videos/youtube';
 import {  MusicPop } from '../pages/music/music-popOver/popover';
+
+
+
+//services imports
 import { DataService } from './services/data.service';
+
+
+
+
+
+
 import { LocDetailsPage } from '../pages/loc-details/loc-details';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -26,6 +36,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 import { PredictionPage } from '../pages/prediction/prediction';
 import { PredmapPage } from '../pages/predmap/predmap';
+import { EditPage } from '../pages/edit/edit';
+
+
 
 @NgModule({
   declarations: [
@@ -45,7 +58,8 @@ import { PredmapPage } from '../pages/predmap/predmap';
     SignupPage,
     LocDetailsPage,
     PredictionPage,
-    PredmapPage
+    PredmapPage,
+    EditPage
     
   ],
   imports: [
@@ -70,14 +84,16 @@ import { PredmapPage } from '../pages/predmap/predmap';
     SignupPage,
     LocDetailsPage,
     PredictionPage,
-    PredmapPage
+    PredmapPage,
+    EditPage
 
   ],
   providers: [
     StatusBar,
     DataService,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    
   ]
 })
 export class AppModule {}

@@ -32,6 +32,50 @@ def user(id):
         return resp
 
 
+@app.route('/update', methods=['POST'])
+def update_user():
+    try:
+        con = DatabaseConnection.connectdb()
+        cur = con.cursor()
+        _json = request.json
+        _id = _json['userId']
+        _name = _json['username']
+        _email = _json['email']
+        _password = _json['password']
+        _userLName = _json['userLName']
+        _userFName = _json['userFName']
+        _address = _json['address']
+        # validate the received values
+        if _name and _email and _password and _id and _userLName and _userFName and _address and request.method == 'POST':
+            # save edits
+            sql = "UPDATE users SET username=%s, userFName=%s, userLName=%s, address=%s, email=%s, password=%s WHERE userId=%s"
+            data = (_name, _userFName, _userLName, _address, _email, _password, _id)
+            cur.execute(sql, data)
+            con.commit()
+            resp = jsonify('User updated successfully!')
+            resp.status_code = 200
+            return resp
+        else:
+            return not_found()
+    except Exception as e:
+        print(e)
+    finally:
+        cur.close()
+        con.close()
+
+
+
+@app.errorhandler(404)
+def not_found(error=None):
+    message = {
+        'status': 404,
+        'message': 'Not Found: ' + request.url,
+    }
+    resp = jsonify(message)
+    resp.status_code = 404
+
+    return resp
+
 
 
 @app.route('/')

@@ -2,6 +2,7 @@
 
     <ion-navbar color="danger">
       <ion-title>Customer Profile</ion-title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </ion-navbar>
   
   </ion-header>
@@ -85,38 +86,24 @@
           
           
           <div style="text-align:center;">
-             <button ion-button round outline color="danger" >Edit Your Profile</button>
-          </div>
+             <button ion-button round outline color="danger" [navPush]="nextPage">Edit Your Profile</button>
+             <!-- <button ion-button round outline color="danger" (click)="onGetItems(2)">Edit Your Profile</button> -->
+            </div>
 
   <ion-list>
       
-      <ion-item>
-        <ion-label>First Name</ion-label>
-          <ion-input type="text" name="name" [(ngModel)]="userFname"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <ion-label >Last Name</ion-label>
-        <ion-input type="text" [(ngModel)]="userLname" ></ion-input>
-      </ion-item>
-  
-  
-  
-      <ion-item>
-        <ion-label>Email</ion-label>
-        <ion-input type="email" [(ngModel)]="userEmail"></ion-input>
-      </ion-item>
-  
-  
-      <ion-item>
-        <ion-label>Username</ion-label>
-        <ion-input type="text" [(ngModel)]="userName"></ion-input>
-      </ion-item>
-  
-      <ion-item>
-        <ion-label>Address</ion-label>
-        <ion-input type="text" [(ngModel)]="userAddress"></ion-input>
-      </ion-item>
+      <div *ngFor="let user of users | slice:1:7; let i=index">
+          <div class="well">
+              <ul class="list-group">
+                  <li class="list-group-item"  *ngIf="i==1">First Name: {{users[1]}}</li>
+                  <li class="list-group-item" *ngIf="i==1">Last Name: {{users[2]}} </li>
+                  <li class="list-group-item" *ngIf="i==1">Email: {{users[3]}}</li>
+                  <li class="list-group-item" *ngIf="i==1">Username:  {{users[4]}}</li>
+                  <li class="list-group-item" *ngIf="i==1">Address: {{users[5]}}</li>
+              </ul>
+              <br>
+          </div>
+        </div>
   
       </ion-list>
   </ion-content>

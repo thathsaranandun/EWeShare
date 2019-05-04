@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 // import {Observable} from 'rxjs/observable';
-// import { map } from 'rxjs/operators';
+ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 /* 
@@ -51,4 +51,29 @@ export class DataService {
       'password':password
     })
   }
+
+
+//=============================================GET THE USER DETAILS==============================================================
+  
+getItems(id :number){
+  return this.http.get('http://localhost:5000/user/'+id)
+      
+}
+
+
+//=============================================UPDATE THE USER DETAILS==============================================================
+editUser(userId:string,fname:string,lname:string,username:string,email:string,address:string,password:string){
+  return this.http.post('http://localhost:5000/update',{
+    'userId':userId,
+    'userFName':fname,
+    'userLName':lname,
+    'username':username,
+    'email':email,
+    'address':address,
+    'password':password
+  })
+}
+
+
+
 }

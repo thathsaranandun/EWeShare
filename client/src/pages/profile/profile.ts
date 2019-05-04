@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import { DataService } from '../../app/services/data.service';
+import { EditPage } from '../edit/edit';
 
 /**
  * Generated class for the ProfilePage page.
@@ -15,7 +16,7 @@ import { DataService } from '../../app/services/data.service';
   templateUrl: 'profile.html',
 })
 export class Profile{
-
+  users:{};
   userFname:string='';
   userLname:string='';
   userEmail:string='';
@@ -23,39 +24,50 @@ export class Profile{
   userAddress:string='';
   userPassword:string='';
 
-
+  nextPage=EditPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public dataService:DataService) {
+        
+  }
+
+
+
+
+  ngOnInit() 
+  {
+    //retireve data from the local storage
+    var test = localStorage.getItem('data');
+    let arr = JSON.parse(test);
+    console.log(arr);
+
+    this.dataService.getItems(arr[0]).subscribe(users=> {
+      console.log(users);
+      console.log(users[0]);
+      
+              this.users=users;
+    });
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');
+     
   }
 
 
- /*    onSubmit(){
-        this.dataService.addUser(this.user).subscribe(user => {
-            console.log(user);
-            this.users.unshift(user);
-        });
-    } */
 
-    signup(){
-      /* this.dataService.getUser(this.username).subscribe((data:any) =>{
-        this.dbuser=data.dbuser;
-      }); */
-      this.dataService.postSignUp(this.userFname,this.userLname,this.userName,this.userEmail,this.userAddress,this.userPassword).subscribe((data:any) => {
-      })
-      this.userFname='';
-      this.userLname='';
-      this.userEmail='';
-      this.userName='';
-      this.userAddress='';
-      this.userPassword='';
-      alert("User Registered Successfully.")
-      
-    }
+
+   
+
+
+    // onGetItems(id){
+    //   this.dataService.getItems(id).subscribe(users=> {
+    //    console.log(users);
+    //    console.log(users[0]);
+       
+    //            this.users=users;
+    //   });
+
 
 }
 
