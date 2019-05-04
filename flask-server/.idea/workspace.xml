@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0607fbb-8137-41bb-8fcc-ee5fd957b9d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/tabs/tabs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/tabs/tabs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LogIn.py" beforeDir="false" afterPath="$PROJECT_DIR$/LogIn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/arduino/arduino.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/arduino/arduino.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LogIn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+            <state relative-caret-position="17">
+              <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -243,12 +242,12 @@
       <workItem from="1556694001402" duration="12721000" />
       <workItem from="1556809904750" duration="805000" />
       <workItem from="1556866844090" duration="6547000" />
-      <workItem from="1556893399685" duration="2822000" />
+      <workItem from="1556893399685" duration="3530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24336000" />
+    <option name="totallyTimeSpent" value="25044000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -348,8 +347,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LogIn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+        <state relative-caret-position="17">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

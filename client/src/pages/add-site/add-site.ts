@@ -31,6 +31,11 @@ export class AddSitePage {
   }
 
   addsite(){
+    var test = localStorage.getItem('userid');
+    let arr = JSON.parse(test);
+    console.log(arr);
+    this.userId=arr;
+    console.log(this.userId);
     this.dataService.postAddSite(this.address,this.latitude,this.longitude,this.userId).subscribe((data:any) => {
       this.verify=data.done
       console.log(data.done)

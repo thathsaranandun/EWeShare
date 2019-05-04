@@ -33,6 +33,7 @@ export class Login {
         console.log(data);
         this.enteredDataStatus=data.valid;
         this.userID=data.userid;
+        localStorage.setItem('userid', data.userid);
         console.log('User ID:'+this.userID)
         console.log('enteredDataStatus:'+this.enteredDataStatus)
         if(this.enteredDataStatus=='true'){
