@@ -3,7 +3,6 @@ from flask_cors import CORS,cross_origin
 
 
 import json
-
 import AddSite
 import SignUp
 import locationPredictor
@@ -11,9 +10,6 @@ import LogIn
 
 app = Flask(__name__)
 CORS(app, support_credentials=True)
-
-
-
 
 
 
@@ -86,14 +82,30 @@ def newuser():
 def app_result():
     print("Received the Values....")
     data = request.get_json(force=True)
-    print('Time Range:'+data['time']+' kwh:'+data['kwh']+' charger-type:'+data['chargerType'])
-    print("Prediction In Pursuite...")
-    #Prediction Obj Created to get the Prediction Result
-    predictionObj = locationPredictor.predictor(data['time'],data['kwh'],data['chargerType'])
-    predictionResult = predictionObj.predict()
+    print('Time Range:' + data['time'] + ' kwh:' + data['kwh'] + ' charger-type:' + data['chargerType'])
+    print('Input is being Validated')
+    # Prediction Obj Created to get the Prediction Result
+    predictionObj = locationPredictor.predictor(data['time'], data['kwh'], data['chargerType'])
+    validation = predictionObj.validate()
 
-    print('Prediction Sending...')
-    return json.dumps({"newdata": predictionResult[0]})
+    if (validation['valid']):
+        print("Prediction In Pursuite...")
+        predictionResult = predictionObj.predict()
+        locationDetails = predictionObj.locationDetails(predictionResult[0])
+        print('Prediction Sending...')
+        print('Prediction Suxxesful')
+        return json.dumps(
+            {"location": {"lat": locationDetails['lat'], "lon": locationDetails['lon']}, "locdetails": locationDetails['address'], "valid": validation['valid']})
+
+        """
+        # return json.dumps({"newdata": predictionResult[0],"location":{"lat":56.4881,"lon":3.0146},"locdetails":'Ardler Complex,Dundee'})
+        location = "Ardler Complex,Dundee"
+        return json.dumps(
+            {"location": {"lat": 56.4881, "lon": -2.97489}, "locdetails": location, "valid": validation['valid']})
+        """
+    else:
+        return json.dumps(validation)
+
 
 if __name__ == '__main__':
     app.run()

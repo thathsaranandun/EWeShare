@@ -56,9 +56,12 @@ export class Login {
     }else{
       this.alert('Error','Invalid Login details. Please enter again.');
     }
+ 
+ 
+  
+}
 
-  }
-
+  
   alert(title:string,message:string){
     let alert = this.alertCtrl.create({
       title: title,
