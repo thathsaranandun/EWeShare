@@ -26,7 +26,7 @@ class LogIn:
                         if row ['username'] == self.username:
                             if row ['password'] == self.password:
                                 print("password is matching")
-                                valid='true'
+                                valid = 'true'
                                 return json.dumps({'valid':valid,'userid':row['userId']})
                             else:
                                 print("invalid password")

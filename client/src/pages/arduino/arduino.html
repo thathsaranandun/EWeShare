@@ -7,43 +7,40 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>arduino</ion-title>
+    <ion-title>Charge</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  
 
   <ion-list>
       <ion-item-divider>Charging Statistics</ion-item-divider>
+      <img src="../assets/img/img/charge.jpg" alt="charging point" class="cpimg"/>
   
       <ion-item>
         <ion-label>Charger Type</ion-label>
-          <ion-input type="text" name="name" [(ngModel)]="charger_t"></ion-input>
       </ion-item>
   
       <ion-item>
         <ion-label >Charging Speed</ion-label>
-        <ion-input type="text" [(ngModel)]="charging_s" ></ion-input>
       </ion-item>
   
       <ion-item>
-        <ion-label>Energy consumption</ion-label>
-        <ion-input type="text" [(ngModel)]="energy_c"></ion-input>
+        <ion-label >Energy consumption: {{energy_c}}</ion-label>
+        <p type="text" ></p>
       </ion-item>
 
       <ion-item>
-        <ion-label>Power Consumption</ion-label>
-        <ion-input type="text" [(ngModel)]="power_c"></ion-input>
+        <ion-label>Power Consumption: {{power_c}}</ion-label>
       </ion-item>
       
       <ion-item>
-        <ion-button> Start </ion-button>
-      </ion-item>
+        <button class="btnWidth" ion-button round outline> Start </button>
+        <button class="btnWidth" ion-button round outline> Stop </button>
 
-      <ion-item>
-        <ion-button> Stop </ion-button>
       </ion-item>
   
   </ion-list>
