@@ -1,6 +1,6 @@
 import { Login } from './../login/login';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { DataService } from '../../app/services/data.service';
 
 /**
@@ -17,16 +17,16 @@ import { DataService } from '../../app/services/data.service';
 })
 export class SignupPage {
 
-  userFname:string='';
-  userLname:string='';
-  userEmail:string='';
-  userName:string='';
-  userAddress:string='';
-  userPassword:string='';
+  userFname:string=null;
+  userLname:string=null;
+  userEmail:string=null;
+  userName:string=null;
+  userAddress:string=null;
+  userPassword:string=null;
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public dataService:DataService) {
+  constructor(public navCtrl: NavController,public alertCtrl: AlertController, public navParams: NavParams,public dataService:DataService) {
 
   }
 
@@ -34,28 +34,42 @@ export class SignupPage {
     console.log('ionViewDidLoad SignupPage');
   }
 
-
- /*    onSubmit(){
-        this.dataService.addUser(this.user).subscribe(user => {
-            console.log(user);
-            this.users.unshift(user);
-        });
-    } */
-
+/**
+ * User Signup Method
+ */
   signup(){
-      /* this.dataService.getUser(this.username).subscribe((data:any) =>{
-        this.dbuser=data.dbuser;
-      }); */
       this.dataService.postSignUp(this.userFname,this.userLname,this.userName,this.userEmail,this.userAddress,this.userPassword).subscribe((data:any) => {
+       if(data.valid){
+        this.userFname=null;
+        this.userLname=null;
+        this.userEmail=null;
+        this.userName=null;
+        this.userAddress=null;
+        this.userPassword=null;
+        this.showAlert(data.msg);
+        this.navCtrl.push(Login);
+        }
+        else{
+        this.userFname=null;
+        this.userLname=null;
+        this.userEmail=null;
+        this.userName=null;
+        this.userAddress=null;
+        this.userPassword=null;
+          this.showAlert(data.msg)
+        }
       })
-      this.userFname='';
-      this.userLname='';
-      this.userEmail='';
-      this.userName='';
-      this.userAddress='';
-      this.userPassword='';
-      alert("User Registered Successfully.")
       
+      
+  }
+
+  showAlert(validation:any) {
+    const alert = this.alertCtrl.create({
+      title: 'Registration Message',
+      subTitle:'<p>'+ validation+'</p>',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }
