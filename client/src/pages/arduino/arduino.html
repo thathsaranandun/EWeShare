@@ -16,17 +16,25 @@
 
 
 <ion-content padding>
+  <div class="uppser_div">
+    <ion-item-divider class="charging_station_name">Charger id</ion-item-divider>
+    <img src="../assets/img/img/charge.jpg" alt="charging point" class="cpimg"/>
+  </div>
   <div class="main_div">
-    <div class="small-space"> </div>
-  <h1 class="energy_cText">Energy consumption:</h1><h1 class="energy_cText">    {{energy_c}} Kw</h1>
+  <h3 class="energy_cText">Energy consumption:</h3><h3 class="energy_cText">    {{energy_c}} Kw</h3>
   <br>
-  <h1 class="power_cText">Power Consumption:</h1><h1 class="power_cText">     {{power_c}} Kwh</h1>
+  <h3 class="power_cText">Power Consumption:</h3><h3 class="power_cText">     {{power_c}} Kwh</h3>
   <!--<ion-button expand="block">Block Button</ion-button>-->
     <div class="small-space"> </div>
-    <button ion-button icon-start large color="secondary">
-      <ion-icon name="flash"></ion-icon>
-      START/ STOP</button>
-     <div class="charging_status_div">
+    <button ion-button icon-start large full color="secondary">
+      <ion-icon name="power"></ion-icon>
+      START</button>
+    <br>
+    <button ion-button icon-start large full color="primary">
+      <ion-icon name="remove-circle"></ion-icon>
+      STOP</button>
+
+    <div class="charging_status_div">
       <h3 class="charging_status">Charging: STOP!</h3>
       </div>
 
