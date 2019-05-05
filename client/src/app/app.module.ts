@@ -3,6 +3,9 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+
+
+
 //import { AngularFireModule } from '@angular/fire';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
@@ -21,17 +24,23 @@ import { Profile } from '../pages/profile/profile';
 import { VimeoVideo } from '../pages/videos/vimeo';
 import {  YoutubeVideo } from '../pages/videos/youtube';
 import {  MusicPop } from '../pages/music/music-popOver/popover';
+
+
+//service imports
 import { DataService } from './services/data.service';
+
+
 import { LocDetailsPage } from '../pages/loc-details/loc-details';
 import {AddSitePage} from '../pages/add-site/add-site'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-//import { HttpModule } from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { PredictionPage } from '../pages/prediction/prediction';
 import { PredmapPage } from '../pages/predmap/predmap';
 import { ArduinoPage } from '../pages/arduino/arduino';
+import { EditPage } from '../pages/edit/edit';
 
 var config = {
   apiKey: "AIzaSyCsgwAjMM-de8JzvYAwGUXQ3tjXxPp-FPw",
@@ -57,6 +66,7 @@ var config = {
     Profile,
     MapPage,
     AddSitePage,
+    EditPage,
     Intro,
     SignupPage,
     LocDetailsPage,
@@ -79,6 +89,7 @@ var config = {
     NewsPage,
     VideoPage,
     TabsPage,
+    EditPage,
     Login,
     YoutubeVideo,
     VimeoVideo,
