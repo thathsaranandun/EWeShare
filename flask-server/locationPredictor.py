@@ -60,6 +60,7 @@ class predictor:
     # Validation of User Inputs
     # returns an array of validation details
     def validate(self):
+        validityInputFields="Please Fill all the details"
         validityString = "Please Enter a number, Not a word"
         validityTimeRange = "Please Enter a Time less than 31 minutes"
 
@@ -71,6 +72,7 @@ class predictor:
             message = {"errorMsg": validityString, "valid": False}
             return message
         """
+
         if (int(self.time) > 30):
             print('Input Time Range is Invalid!')
             message = {"errorMsg": validityTimeRange, "valid": False}
