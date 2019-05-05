@@ -58,6 +58,12 @@ def addsite():
 def newuser():
     if request.method == 'POST':
         data = request.get_json(force=True)
+
+        if (data['fname'] is None or data['lname'] is None or data['username'] is None or
+        data['email'] is None or data['address'] is None or data['password'] is None):
+            print('ERROR! Signup Input Fields Not Filled')
+            return json.dumps({"msg": "Please Fill all the details", "valid": False})
+
         fname = data['fname']
         print('userfname retrieved from CLIENT: ' + fname)
         lname = data['lname']
@@ -72,9 +78,9 @@ def newuser():
         print('password retrieved from CLIENT: ' + password)
         print('Registering User...')
         register = SignUp.SignUp(fname, lname, username, email, address, password)
-        success = register.signup()
-        print(success)
-        return json.dumps({'fname': fname})
+        result = register.signup()
+        print(result['mesg'])
+        return json.dumps({'fname': fname,'msg':result['mesg'],'valid':result['isvalid']})
 
 
 @app.route('/api/prediction', methods=['POST'])
