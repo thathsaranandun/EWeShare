@@ -1,49 +1,66 @@
 <ion-content class="bg-image no-scroll" padding>
 
-<img src="assets/img/img/eweshare.png" class="logo">
+    
 
-<div>
-   <ion-list class="list" inset>
+        <!--<img src="assets/img/img/eweshare.png" class="logo">-->
+         <img src="assets/img/img/eweshare.png" class="logo">
+       
+         <div>
+           <ion-list class="list" inset>
+             <!--<ion-item class="label">
+                <ion-label color="myWhite" style="font-size:12px" stacked>Username</ion-label>
+                <ion-input type="text" placeholder="Enter Username" class="login_fields"></ion-input>
+            </ion-item>
+             <ion-item class="label">
+                <ion-label color="myWhite" style="font-size:12px" stacked>Password</ion-label>
+                <ion-input color="myWhite" type="password" placeholder="Enter Password" class="login_fields"></ion-input>
+            </ion-item>-->
+           </ion-list>
+         </div>
+         <!---------------------------------------------------------------------------------------------------------------------->
+         <div class="login_form_div">
+           <!--tex fields-->
+           <div class="text_filed_div">
+             <!--login username-->
+             <div class="login_fields">
+               <ion-item class="label">
+       
+                 <ion-label color="myWhite" style="font-size:12px" stacked>Username</ion-label>
+       
+                 <ion-input  type="text" placeholder="Enter Username"></ion-input>
+       
+               </ion-item>
+             </div>
+             <!--login password field-->
+             <div class="login_fields">
+               <ion-item class="label">
+       
+                 <ion-label color="myWhite" style="font-size:12px" stacked>Password</ion-label>
+       
+                 <ion-input  type="password" placeholder="Enter Password" ></ion-input>
+       
+               </ion-item>
+       
+             </div>
+       
+           </div>
+       
+           <!--login buttons -->
+           <div class="login_botten_div">
+             <p class="text" style="font-family:OpenSans; font-size:14px; color:#ebebeb">Forgot your password?</p>
+       
+             <div class="button_div">
+               <button class="btn_1" ion-button color="primary" round [navPush]="nextPage">Login</button>
+             </div>
+       
+       
+             <div class="button_div">
+               <button class="btn_1" ion-button color="secondary" round [navPush]="signPage">Sign Up</button>
+             </div>
+           </div>
 
-
-
-         <ion-item class="label">
-              
-            <ion-label color="myWhite" style="font-size:12px" stacked>Username</ion-label>
-
-            <ion-input style="color: #FFFFFF;" type="text" [(ngModel)]="username" placeholder="Enter Username"></ion-input>
-        
-        </ion-item>
-
-
-
-
-         <ion-item class="label">
-              
-            <ion-label color="myWhite" style="font-size:12px" stacked>Password</ion-label>
-
-            <ion-input style="color: #FFFFFF;"  [(ngModel)]="password" type="password" placeholder="Enter Password"></ion-input>
-        
-        </ion-item>
-
-   </ion-list>
-</div>
-<!-- Forgot your password? -->
-<p class="text" style="font-family:OpenSans; font-size:14px; color:#ebebeb"></p>
-
-
-  <div text-center>
-      <button class="btnWidth" ion-button color="secondary" round (click)="loginUser()">Login</button>
-  </div>
-
-
-  <div text-center>
-      <button class="myButton" ion-button color="myWhite" round outline [navPush]="signPage">Sign Up</button>
-  </div>
-
-  <img src="assets/img/img/facebook.png" class="fb-button">
-  
-  <img src="assets/img/img/twitter.png" class="twitter-button">
-  
-
-</ion-content>
+           
+         </div>
+       
+       </ion-content>
+      
