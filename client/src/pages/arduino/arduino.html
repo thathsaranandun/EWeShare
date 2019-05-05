@@ -5,17 +5,31 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>arduino</ion-title>
-  </ion-navbar>
+    <ion-title>Charging Status</ion-title>
+    </ion-navbar>
+  <!--<ion-navbar>-->
+    <!--<ion-title>arduino</ion-title>-->
+  <!--</ion-navbar>-->
 
 </ion-header>
 
 
 <ion-content padding>
-  <p>Energy consumption: {{energy_c}}</p>
+  <div class="main_div">
+    <div class="small-space"> </div>
+  <h1 class="energy_cText">Energy consumption:</h1><h1 class="energy_cText">    {{energy_c}} Kw</h1>
   <br>
-  <p>Power Consumption: {{power_c}}</p>
+  <h1 class="power_cText">Power Consumption:</h1><h1 class="power_cText">     {{power_c}} Kwh</h1>
+  <!--<ion-button expand="block">Block Button</ion-button>-->
+    <div class="small-space"> </div>
+    <button ion-button icon-start large color="secondary">
+      <ion-icon name="flash"></ion-icon>
+      START/ STOP</button>
+     <div class="charging_status_div">
+      <h3 class="charging_status">Charging: STOP!</h3>
+      </div>
+
+    </div>
 
 </ion-content>

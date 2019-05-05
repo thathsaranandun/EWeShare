@@ -29,6 +29,7 @@ export class ArduinoPage {
       console.log(data);
       this.power_c=data;
     });
+
   }
 
   ionViewDidLoad() {
