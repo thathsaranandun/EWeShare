@@ -17,7 +17,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { Login } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { MapPage } from '../pages/map/map';
-import { Profile } from '../pages/profile/profile';
 import { VimeoVideo } from '../pages/videos/vimeo';
 import {  YoutubeVideo } from '../pages/videos/youtube';
 import {  MusicPop } from '../pages/music/music-popOver/popover';
@@ -54,7 +53,6 @@ var config = {
     YoutubeVideo,
     MusicPop,
     ParallaxHeaderDirective,
-    Profile,
     MapPage,
     AddSitePage,
     Intro,
@@ -83,7 +81,6 @@ var config = {
     YoutubeVideo,
     VimeoVideo,
     MusicPop,
-    Profile,
     AddSitePage,
     MapPage,
     Intro,
