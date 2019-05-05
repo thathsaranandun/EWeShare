@@ -8,23 +8,25 @@
   <ion-navbar>
     <ion-title>Charging Status</ion-title>
     </ion-navbar>
-  <!--<ion-navbar>-->
-    <!--<ion-title>arduino</ion-title>-->
-  <!--</ion-navbar>-->
+
 
 </ion-header>
 
 
 <ion-content padding>
   <div class="uppser_div">
-    <ion-item-divider class="charging_station_name">Charger id</ion-item-divider>
+
+    <ion-item-divider class="charging_station_name">
+      <ion-icon ios="ios-outlet" md="md-outlet"></ion-icon>
+      Charger id
+    </ion-item-divider>
     <img src="../assets/img/img/charge.jpg" alt="charging point" class="cpimg"/>
   </div>
   <div class="main_div">
   <h3 class="energy_cText">Energy consumption:</h3><h3 class="energy_cText">    {{energy_c}} Kw</h3>
-  <br>
   <h3 class="power_cText">Power Consumption:</h3><h3 class="power_cText">     {{power_c}} Kwh</h3>
-  <!--<ion-button expand="block">Block Button</ion-button>-->
+   <br>
+    <h3 class="cost_text">Cost: Rs{{power_c}}</h3>   <!--<ion-button expand="block">Block Button</ion-button>-->
     <div class="small-space"> </div>
     <button ion-button icon-start large full color="secondary">
       <ion-icon name="power"></ion-icon>
