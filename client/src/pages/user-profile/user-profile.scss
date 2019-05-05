@@ -1,0 +1,103 @@
+page-profile {
+
+    .header-parent {
+        position: relative;
+        text-align: center;
+    }
+    
+    .header-social {
+        position: relative;
+        bottom: 1px;
+        text-align: center;
+        margin-top: -5.5vh;
+    }
+    
+
+
+
+    .location-icon {
+        color: #fff;
+        font-size: 18px;
+        float: right;
+    }
+
+
+
+    .profile {
+        width: 25%;
+        margin: 0 auto;
+        margin-top: -10vh;
+        position: absolute;
+        top: 210px; 
+        right: 160px;
+    }
+
+
+    .title-name {
+        color: rgb(236, 236, 236);
+        margin-top: -3vh;
+        margin-left:5.5vw;
+        
+    }
+
+
+    .counter{
+        text-align:center;
+        margin-top:-5vh;
+        margin-right:3vw;
+    }
+
+    .numbers {
+        font-family:OpenSans;
+        color:#323e46;
+        font-size:20px;
+    }
+
+    .numbers-title {
+        font-family:OpenSans;
+        color:#b7c4cb;
+        font-size:16px;
+        margin-top:-3vh;
+    }
+
+
+    .location {
+        font-size: 16px;
+        font-family: OpenSans;
+        color: rgb(167, 16, 16);
+        float: left;
+    }
+
+    .profile-location{
+        margin-top: -4.8vh;
+        margin-right: 36vw;
+
+    }
+
+
+    .slides {
+        max-height: 20%;
+        background-color: #f7f8fa;
+    }
+
+    .slide-image {
+        width: 75%;
+    }
+
+
+    .share-numbers {
+        font-family: open-sans;
+        color: #0091ea;
+        font-size: 16px;
+        margin-top: -6vh; 
+    }
+   
+    }
+    
+
+    .toast-message {
+        color: white;
+        background-color: #0091ea;
+    }
+    
+   

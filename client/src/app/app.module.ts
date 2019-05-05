@@ -31,6 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PredictionPage } from '../pages/prediction/prediction';
 import { PredmapPage } from '../pages/predmap/predmap';
 import { ArduinoPage } from '../pages/arduino/arduino';
+import { EditProfilePage } from '../pages/edit-profile/edit-profile';
+import { UserProfilePage } from '../pages/user-profile/user-profile';
 
 var config = {
   apiKey: "AIzaSyCsgwAjMM-de8JzvYAwGUXQ3tjXxPp-FPw",
@@ -60,6 +62,8 @@ var config = {
     LocDetailsPage,
     PredictionPage,
     ArduinoPage,
+    EditProfilePage,
+    UserProfilePage,
     PredmapPage
     
   ],
@@ -88,6 +92,8 @@ var config = {
     LocDetailsPage,
     PredictionPage,
     ArduinoPage,
+    EditProfilePage,
+    UserProfilePage,
     PredmapPage
 
   ],
