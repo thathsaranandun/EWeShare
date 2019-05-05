@@ -5,3 +5,8 @@ flask-server/__pycache__/DatabaseConnection.cpython-37.pyc
 flask-server/__pycache__/locationPredictor.cpython-37.pyc
 flask-server/__pycache__/LogIn.cpython-37.pyc
 flask-server/__pycache__/SignUp.cpython-37.pyc
+flask-server/__pycache__/AddSite.cpython-37.pyc
+flask-server/__pycache__/DatabaseConnection.cpython-37.pyc
+flask-server/__pycache__/locationPredictor.cpython-37.pyc
+flask-server/__pycache__/LogIn.cpython-37.pyc
+flask-server/__pycache__/SignUp.cpython-37.pyc
