@@ -1,11 +1,13 @@
 <ion-header>
-
   <ion-navbar>
+    <ion-buttons right>
+      <button ion-button icon-only [navPush]="TabsPage">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Map</ion-title>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content padding>
   <div #map id="map"></div>

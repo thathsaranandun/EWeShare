@@ -48,9 +48,9 @@ export class MapPage {
 
     var markerWindow = new google.maps.InfoWindow({
       content:'<h4>Charging Station 1</h4><br><p>Port Type:J1770<br>Availability: Available<br>Open Time:24/7</p><input type=submit value="View location" id="clickIt">'
-    
+
     })
-   
+
 
     marker.addListener('click',function(){
       markerWindow.open(this.map,marker)
@@ -58,13 +58,13 @@ export class MapPage {
 
     google.maps.event.addListener(markerWindow, 'domready', () => {
       if(this.loaded){
-      //now my elements are ready for dom manipulation
-      var clickableItem = document.getElementById('clickIt');
-      clickableItem.addEventListener('click', () => {
-        this.nac.push(LocDetailsPage);
-      });
-      this.loaded=true;
-    }
+        //now my elements are ready for dom manipulation
+        var clickableItem = document.getElementById('clickIt');
+        clickableItem.addEventListener('click', () => {
+          this.nac.push(LocDetailsPage);
+        });
+        this.loaded=true;
+      }
     });
 
     let marker2 : google.maps.Marker = new google.maps.Marker({
@@ -87,7 +87,7 @@ export class MapPage {
       //now my elements are ready for dom manipulation
       var clickableItem = document.getElementById('clickIt2');
       clickableItem.addEventListener('click', () => {
-       // this.nac.push(LocDetailsPage);
+        // this.nac.push(LocDetailsPage);
       });
     });
 
