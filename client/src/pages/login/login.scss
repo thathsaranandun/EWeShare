@@ -1,75 +1,215 @@
-page-login {
-    .bg-image{
-        background-image: url(../../assets/img/img/car34.jpg);
-        background-repeat:no-repeat;
-        -webkit-background-size:cover;
-        -moz-background-size:cover;
-        -o-background-size:cover;
-        background-size:cover;
-        background-position:center;
-    }
+[21:00, 5/5/2019] Sanka Iit: <ion-content class="bg-image no-scroll" padding>
 
-    .no-scroll .scroll-content{
-        overflow: hidden;
-    }
+  <!--<img src="assets/img/img/eweshare.png" class="logo">-->
+  <img src="assets/img/common/EWe-share-logo-2.png" class="logo">
 
-    .logo{
-        display: block;
-        margin: auto;
-        width: 50%;
-        margin-top: 2vh;
-    }
+  <div>
+    <ion-list class="list" inset>
+      <!--<ion-item class="label">
+         <ion-label color="myWhite" style="font-size:12px" stacked>Username</ion-label>
+         <ion-input type="text" placeholder="Enter Username" class="login_fields"></ion-input>
+     </ion-item>
+      <ion-item class="label">
+         <ion-label color="myWhite" style="font-size:12px" stacked>Password</ion-label>
+         <ion-input color="myWhite" type="password" placeholder="Enter Password" class="login_fields"></ion-input>
+     </ion-item>-->
+    </ion-list>
+  </div>
+  <!---------------------------------------------------------------------------------------------------------------------->
+  <div class="login_form_div">
+    <!--tex fields-->
+    <div class="text_filed_div">
+      <!--login username-->
+      <div class="login_fields">
+        <ion-item class="label">
 
+          <ion-label color="myWhite" style="font-size:12px" stacked>Username</ion-label>
 
-    .label{
-        background-color: rgba(255,255,255,0.0);
+          <ion-input  type="text" placeholder="Enter Username"></ion-input>
 
-    }
+        </ion-item>
+      </div>
+      <!--login password field-->
+      <div class="login_fields">
+        <ion-item class="label">
 
+          <ion-label color="myWhite" style="font-size:12px" stacked>Password</ion-label>
 
-    .list{
-        width:50%;
-        position: absolute;
-        right:100px;
-        margin:auto;
-    }
+          <ion-input  type="password" placeholder="Enter Password" ></ion-input>
 
+        </ion-item>
 
-    .text{
-        text-align:center;
-        margin-top:30vh;
-    }
+      </div>
 
+    </div>
 
-    .btnWidth{
-        width:50%;
-  
-    }
+    <!--login buttons -->
+    <div class="login_botten_div">
+      <p class="text" style="font-family:OpenSans; font-size:14px; color:#ebebeb">Forgot your password?</p>
 
-    .myButton{
-        margin-top:8vh;
-        width:74%;
-
-    }
-
-
-    .fb-button{
-       position: absolute;
-       left:60px;
-       margin-top:1.4vh;
-       width: 30%;
-       height: auto;
-    }
+      <div class="button_div">
+        <button class="btn_1" ion-button color="primary" round [navPush]="nextPage">Login</button>
+      </div>
 
 
+      <div class="button_div">
+        <button class="btn_1" ion-button color="secondary" round [navPush]="signPage">Sign Up</button>
+      </div>
+    </div>
+    <div class="social_button">
+      <div class="social_icon">
+        <img src="assets/img/common/facebook_2.png" class="social_img">
+      </div>
+      <div class="social_icon">
+        <img src="assets/img/common/twitter_1.png" class="social_img">
+      </div>
+      <div class="social_icon">
+        <img src="assets/img/common/google-plus.png" class="social_img">
+      </div>
+    </div>
+  </div>
 
-    .twitter-button{
-        
-       position: absolute;
-       right:60px;
-       margin-top:1.4vh;
-       width: 30%;
-       height: auto;
-    }
+</ion-content>
+[21:01, 5/5/2019] Sanka Iit: meka login.html ekata danna
+[21:01, 5/5/2019] Sanka Iit: page-login {
+  ion-input{
+    color: white;
+  }
+  .bg-image{
+    //background-image: url(../../assets/img/img/car34.jpg);
+    background-color: #25274D;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    //background-image: url(../../assets/img/img/car33.jpg);
+    background-color: #25274D;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    //CSS
 
+  }
+  .no-scroll .scroll-content{
+    overflow: hidden;
+  }
+
+  .logo{
+    display: block;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    margin-top: auto;
+    opacity: 0.8;
+
+  }
+
+
+  .label{
+    background-color: rgba(0,0,0,0.0);
+
+  }
+
+
+  .list{
+    width:50%;
+    position: absolute;
+    right:100px;
+    margin:auto;
+  }
+
+
+  .text{
+    text-align:center;
+  }
+
+  .btn_1{
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  .text_filed_div{
+    padding-top: auto;
+    padding-bottom:auto;
+    position: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .login_botten_div{
+    max-width: 400px;
+    width: 100%;
+    margin-top:5%;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  .button_div{
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .social_button{
+    display: flex;
+    max-width: 162px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .social_icon{
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .social_img{
+    width: 50px;
+    height: 50px;
+  }
+  .login_form_div{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+  }
+  .login_fields{
+    position: center;
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  //---------responsive for all devises----
+  //for mobile devises
+
+  //for desktops
+
+  /*
+      .twitter-button{
+         position: absolute;
+         right:60px;
+         margin-top:1.4vh;
+         width: 30%;
+         height: auto;
+      }
+      .fb-button{
+         position: absolute;
+         left:60px;
+         margin-top:1.4vh;
+         width: 30%;
+         height: auto;
+      }
+      .btnWidth{
+          width:50%;
+      }
+      .myButton{
+          margin-top:8vh;
+          width:74%;
+      }
+      */
 }
