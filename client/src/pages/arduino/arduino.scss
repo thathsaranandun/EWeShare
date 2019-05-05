@@ -1,13 +1,35 @@
 page-arduino {
-
-    .btnWidth{
-        width:48%;
+    .scroll-content{
+      background-color: #25274D;
+    }
+    .main_div{
+      text-align: center;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   
+  .small-space{
+    width: 100%;
+    padding-top: 10%;
+  }
+    .power_cText{
+      font-family: "Segoe UI", "Noto Sans", sans-serif;
+      color: #e0be45;
     }
-
-    .cpimg{
-        height: 25%;
-        width: 100%;
+    .energy_cText{
+      font-family: "Segoe UI", "Noto Sans", sans-serif;
+      color: #00adb5;
     }
-
-}
+    .charging_status{
+      color:#475867 ;
+    }
+    .charging_status_div{
+      padding-top: 20px;
+    }
+    .charging_station_name{
+      color: #b7c4cb;
+      background-color: #25274D;
+    }
+  }
+  
