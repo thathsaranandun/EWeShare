@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0607fbb-8137-41bb-8fcc-ee5fd957b9d9" name="Default Changelist" comment="" />
+    <list default="true" id="a0607fbb-8137-41bb-8fcc-ee5fd957b9d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Locations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/intro/intro.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/intro/intro.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LogIn.py" beforeDir="false" afterPath="$PROJECT_DIR$/LogIn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1683">
-              <caret line="107" column="26" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
+            <state relative-caret-position="153">
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
@@ -32,7 +38,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SignUp.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="612">
@@ -44,8 +50,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LogIn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="41" column="31" selection-start-line="45" selection-start-column="9" selection-end-line="52" selection-end-column="35" />
+            <state relative-caret-position="272">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Locations.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+              <folding>
+                <element signature="e#18#29#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,11 +98,13 @@
         <option value="$PROJECT_DIR$/login.py" />
         <option value="$PROJECT_DIR$/venv/SignUp.py" />
         <option value="$PROJECT_DIR$/AddSite.py" />
-        <option value="$PROJECT_DIR$/LogIn.py" />
         <option value="$PROJECT_DIR$/DatabaseConnection.py" />
         <option value="$PROJECT_DIR$/locationPredictor.py" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/SignUp.py" />
+        <option value="$PROJECT_DIR$/locations.py" />
+        <option value="$PROJECT_DIR$/LogIn.py" />
+        <option value="$PROJECT_DIR$/Locations.py" />
+        <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
   </component>
@@ -210,12 +230,12 @@
       <workItem from="1557050154374" duration="32000" />
       <workItem from="1557056323725" duration="642000" />
       <workItem from="1557058834896" duration="176000" />
-      <workItem from="1557081945010" duration="1020000" />
+      <workItem from="1557081945010" duration="3908000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42642000" />
+    <option name="totallyTimeSpent" value="45530000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -228,6 +248,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -298,27 +319,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="107" column="26" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DatabaseConnection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LogIn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="41" column="31" selection-start-line="45" selection-start-column="9" selection-end-line="52" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AddSite.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -330,6 +330,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogIn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Locations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding>
+            <element signature="e#18#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DatabaseConnection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
     </entry>

@@ -14,7 +14,7 @@ class LogIn:
 
         # Connect to the database
         connection = DatabaseConnection.connection
-        valid='false';
+        valid='false'
 
         try:
             with connection.cursor() as cursor:

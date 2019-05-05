@@ -63,6 +63,10 @@ export class DataService {
     })
   }
 
+  getLocations(){
+    return this.http.get('http://localhost:5000/api/getlocations')
+  }
+
   //=============================================GET THE USER DETAILS==============================================================
   
 getItems(id :number){

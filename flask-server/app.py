@@ -4,6 +4,7 @@ from flask_cors import CORS, cross_origin
 import json
 import AddSite
 import DatabaseConnection
+import Locations
 import SignUp
 import locationPredictor
 import LogIn
@@ -51,6 +52,15 @@ def addsite():
         done = site.addsite()
         print('Site added successfully.')
         return json.dumps({'done': done})
+
+
+@app.route('/api/getlocations')
+def getlocations():
+    if request.method == 'GET':
+        locations = Locations.getlocations()
+        print(locations)
+        print('Locations retrieved from database.')
+        return locations
 
 
 @app.route('/api/newuser', methods=['POST'])
