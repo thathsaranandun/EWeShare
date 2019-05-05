@@ -33,8 +33,8 @@ class SignUp:
         message = {'supValid': False}
         con = DatabaseConnection.connection
         cur = con.cursor()
-        sql = "SELECT * From users WHERE email=%s"
-        row_count = cur.execute(sql,self.email)
+        sql = "SELECT * From users WHERE username=%s"
+        row_count = cur.execute(sql,self.username)
         print('Results Fetched form users table, email validation in progress')
         if(row_count == 0):
             print('email entered by user is unique')
