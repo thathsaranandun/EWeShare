@@ -17,9 +17,9 @@ import { PredmapPage } from '../predmap/predmap';
 })
 export class PredictionPage {
 
-  time:number = null;
-  kwh:number = null;
-  chargerType:number=null;
+  time:number;
+  kwh:number;
+  chargerType:number;
   loader:any;
 
 

@@ -81,15 +81,8 @@ def newuser():
 def app_result():
     print("Received the Values....")
     data = request.get_json(force=True)
-
-    #To Check whether user filled all input fields
-    if (data['time'] is None or data['kwh'] is None or data['chargerType'] is None):
-        print('ERROR! Input Fields Not Filled')
-        return json.dumps({"errorMsg": "Please Fill all the details", "valid": False})
-
     print('Time Range:' + data['time'] + ' kwh:' + data['kwh'] + ' charger-type:' + data['chargerType'])
     print('Input is being Validated')
-
     # Prediction Obj Created to get the Prediction Result
     predictionObj = locationPredictor.predictor(data['time'], data['kwh'], data['chargerType'])
     validation = predictionObj.validate()
@@ -99,6 +92,7 @@ def app_result():
         predictionResult = predictionObj.predict()
         locationDetails = predictionObj.locationDetails(predictionResult[0])
         print('Prediction Sending...')
+        print('Prediction Suxxesful')
         return json.dumps(
             {"location": {"lat": locationDetails['lat'], "lon": locationDetails['lon']},
              "locdetails": locationDetails['address'], "valid": validation['valid']})
