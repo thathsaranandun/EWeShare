@@ -1,16 +1,15 @@
-from flask import Flask,request
-from flask_cors import CORS,cross_origin
-
+from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 
 import json
 import AddSite
+import DatabaseConnection
 import SignUp
 import locationPredictor
 import LogIn
 
 app = Flask(__name__)
 CORS(app, support_credentials=True)
-
 
 
 @app.route('/')
@@ -28,7 +27,7 @@ def userlogin():
         password = data['password']
         print('password retrieved from CLIENT: ' + password)
         print('Validating login details...')
-        user = LogIn.LogIn(username,password)
+        user = LogIn.LogIn(username, password)
         loggeduser = user.login()
         print('logged user json object: ' + loggeduser)
         return loggeduser
@@ -51,7 +50,7 @@ def addsite():
         site = AddSite.AddSite(address, latitude, longitude, userId)
         done = site.addsite()
         print('Site added successfully.')
-        return json.dumps({'done':done})
+        return json.dumps({'done': done})
 
 
 @app.route('/api/newuser', methods=['POST'])
@@ -64,21 +63,21 @@ def newuser():
         lname = data['lname']
         print('username retrieved from CLIENT: ' + lname)
         username = data['username']
-        print('username retrieved from CLIENT: '+username)
+        print('username retrieved from CLIENT: ' + username)
         email = data['email']
         print('username retrieved from CLIENT: ' + email)
         address = data['address']
         print('username retrieved from CLIENT: ' + address)
         password = data['password']
-        print('password retrieved from CLIENT: '+password)
+        print('password retrieved from CLIENT: ' + password)
         print('Registering User...')
-        register = SignUp.SignUp(fname,lname,username,email,address,password)
+        register = SignUp.SignUp(fname, lname, username, email, address, password)
         success = register.signup()
         print(success)
         return json.dumps({'fname': fname})
 
 
-@app.route('/api/prediction', methods = ['POST'])
+@app.route('/api/prediction', methods=['POST'])
 def app_result():
     print("Received the Values....")
     data = request.get_json(force=True)
@@ -95,7 +94,8 @@ def app_result():
         print('Prediction Sending...')
         print('Prediction Suxxesful')
         return json.dumps(
-            {"location": {"lat": locationDetails['lat'], "lon": locationDetails['lon']}, "locdetails": locationDetails['address'], "valid": validation['valid']})
+            {"location": {"lat": locationDetails['lat'], "lon": locationDetails['lon']},
+             "locdetails": locationDetails['address'], "valid": validation['valid']})
 
         """
         # return json.dumps({"newdata": predictionResult[0],"location":{"lat":56.4881,"lon":3.0146},"locdetails":'Ardler Complex,Dundee'})
@@ -105,6 +105,69 @@ def app_result():
         """
     else:
         return json.dumps(validation)
+
+
+@app.route('/user/<id>')
+def user(id):
+    if request.method == 'GET':
+        print('user_id retrieved from CLIENT: ' + id)
+        # Connect to the database
+        connection = DatabaseConnection.connection
+        valid = 'false';
+
+        try:
+            with connection.cursor() as cursor:
+                cursor.execute("SELECT * FROM users WHERE userId=%s", id)
+                row = cursor.fetchone()
+                resp = jsonify(row)
+                resp.status_code = 200
+                return resp
+        except:
+            print('Connection to db failed')
+
+
+@app.route('/update', methods=['POST'])
+def update_user():
+    try:
+        con = DatabaseConnection.connection
+        cur = con.cursor()
+        _json = request.json
+        _id = _json['userId']
+        _name = _json['username']
+        _email = _json['email']
+        _password = _json['password']
+        _userLName = _json['userLName']
+        _userFName = _json['userFName']
+        _address = _json['address']
+        # validate the received values
+        if _name and _email and _password and _id and _userLName and _userFName and _address and request.method == 'POST':
+            # save edits
+            sql = "UPDATE users SET username=%s, userFName=%s, userLName=%s, address=%s, email=%s, password=%s WHERE userId=%s"
+            data = (_name, _userFName, _userLName, _address, _email, _password, _id)
+            cur.execute(sql, data)
+            con.commit()
+            resp = jsonify('User updated successfully!')
+            resp.status_code = 200
+            return resp
+        else:
+            return not_found()
+    except Exception as e:
+        print(e)
+    finally:
+        cur.close()
+        con.close()
+
+
+@app.errorhandler(404)
+def not_found(error=None):
+    message = {
+        'status': 404,
+        'message': 'Not Found: ' + request.url,
+    }
+    resp = jsonify(message)
+    resp.status_code = 404
+
+    return resp
 
 
 if __name__ == '__main__':
