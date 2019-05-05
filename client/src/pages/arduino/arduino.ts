@@ -21,7 +21,7 @@ export class ArduinoPage {
   power_c:number=0;
   charge:boolean=false;
   chargerId:number=9;
-  cost:number=100;
+  cost:number=0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public firebase:AngularFireDatabase) {
 
@@ -49,6 +49,7 @@ export class ArduinoPage {
 
   stop(){
     this.charge=false;
+    this.cost=this.power_c*75;
     this.firebase.object('/'+this.chargerId).set({
       charging:this.charge,
       cost:this.cost,
