@@ -26,7 +26,7 @@ export class MapPage {
   constructor(public nac:NavController, public navParams: NavParams,public dataService:DataService) {
   }
 
-  ionViewDidLoad(){
+ ngOnInit(){
     this.initMap();
   }
 
@@ -47,14 +47,14 @@ export class MapPage {
           map:this.map,
           position:coord,
           icon:'../assets/img/map_marker_icon_1 - Copy.png'
-    
+
         })
         this.mapmarks.push(marker)
         console.log(this.mapmarks[i])
 
-    }      
-      
-   
+      }
+
+
     })
 
     let coord = new google.maps.LatLng(6.9407,79.8796);
