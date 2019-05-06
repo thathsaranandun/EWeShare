@@ -57,6 +57,7 @@ def addsite():
 @app.route('/api/getlocations')
 def getlocations():
     if request.method == 'GET':
+        print('GET request recieved')
         locations = Locations.getlocations()
         print(locations)
         print('Locations retrieved from database.')

@@ -19,6 +19,7 @@ export class MapPage {
   latitute: any;
   loaded: boolean = true;
   locations:any;
+  markers: object[]=[];
 
   constructor(public nac:NavController, public navParams: NavParams,public dataService:DataService) {
   }
@@ -30,6 +31,15 @@ export class MapPage {
 
 
   initMap() {
+
+    this.dataService.getLocations().subscribe((data:any)=>{
+      console.log(data)
+      this.markers=data
+      console.log(this.markers)
+      console.log(this.markers[0])      
+      
+   
+    })
 
     let coord = new google.maps.LatLng(6.9407,79.8796);
     let mapopts : google.maps.MapOptions = {

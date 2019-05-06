@@ -1,6 +1,8 @@
 # class attribute
 import json
 
+from flask.json import jsonify
+
 import DatabaseConnection
 
 
@@ -16,20 +18,13 @@ def getlocations():
             sql = "SELECT * FROM chargers"
             try:
                 cursor.execute(sql)
-                location=''
                 result = cursor.fetchall()
-                for row in result:
-                    latitude=row['latitude']
-                    longitude=row['longitude']
-                    port=row['port_type']
-                    location += latitude+longitude+port+','
-                return json.dumps({'location':location})
+                return result
 
 
             except:
-                print("Oops! Something wrong")
-                location=''
-                return json.dumps({'location': location})
+                print("Failed to query chargers table.")
+                return 'quering failed'
 
 
     except:
