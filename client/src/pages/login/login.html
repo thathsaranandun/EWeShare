@@ -1,4 +1,4 @@
-<ion-content class="bg-image no-scroll" padding>
+<!--<ion-content class="bg-image no-scroll" padding>
 
         <img src="assets/img/img/eweshare.png" class="logo">
         
@@ -28,7 +28,7 @@
         
            </ion-list>
         </div>
-        <!-- Forgot your password? -->
+        &lt;!&ndash; Forgot your password? &ndash;&gt;
         <p class="text" style="font-family:OpenSans; font-size:14px; color:#ebebeb"></p>
         
         
@@ -42,5 +42,69 @@
           </div>
           
         
-        </ion-content>
-        
+        </ion-content>-->
+
+<ion-content class="bg-image no-scroll" padding>
+
+  <!--<img src="assets/img/img/eweshare.png" class="logo">-->
+  <img src="../../assets/img/common/EWe-share-logo-2.png" class="logo">
+
+  <div>
+    <ion-list class="list" inset>
+    </ion-list>
+  </div>
+  <!---------------------------------------------------------------------------------------------------------------------->
+  <div class="login_form_div">
+    <!--tex fields-->
+    <div class="text_filed_div">
+      <!--login username-->
+      <div class="login_fields">
+        <ion-item class="label">
+
+          <ion-label color="myWhite" style="font-size:12px" stacked>Username</ion-label>
+
+          <ion-input style="color: #FFFFFF;" type="text" [(ngModel)]="username" placeholder="Enter Username"></ion-input>
+
+        </ion-item>
+      </div>
+      <!--login password field-->
+      <div class="login_fields">
+        <ion-item class="label">
+
+          <ion-label color="myWhite" style="font-size:12px" stacked>Password</ion-label>
+
+          <ion-input style="color: #FFFFFF;"  [(ngModel)]="password" type="password" placeholder="Enter Password"></ion-input>
+
+        </ion-item>
+
+      </div>
+
+    </div>
+
+    <!--login buttons -->
+    <div class="login_botten_div">
+<!--      <p class="text" style="font-family:OpenSans; font-size:14px; color:#ebebeb">Forgot your password?</p>-->
+
+      <div class="button_div">
+        <button class="btnWidth" ion-button color="primary" round full (click)="loginUser()">Login</button>
+      </div>
+
+
+      <div class="button_div">
+        <button class="myButton" ion-button color="secondary" round full [navPush]="signPage">Sign Up</button>
+      </div>
+    </div>
+<!--    <div class="social_button">
+      <div class="social_icon">
+        <img src="assets/img/img/facebook_2.png" class="social_img">
+      </div>
+      <div class="social_icon">
+        <img src="assets/img/img/twitter_1.png" class="social_img">
+      </div>
+      <div class="social_icon">
+        <img src="assets/img/img/google-plus.png" class="social_img">
+      </div>
+    </div>-->
+  </div>
+
+</ion-content>
