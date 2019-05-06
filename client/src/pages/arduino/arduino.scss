@@ -35,4 +35,18 @@ page-arduino {
     .cost_text{
       color: #F85532;
     }
+  .ch_img{
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .button_div{
+    display: flex;
+    //flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .button_div>div{
+    width: 45%;
+  margin: 5px;
+  }
   }
