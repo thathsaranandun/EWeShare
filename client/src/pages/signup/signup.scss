@@ -1,3 +1,43 @@
 page-signup {
 
+    .bg-image{
+        background-image: url(../../assets/img/img/car34.jpg);
+        background-repeat:no-repeat;
+        -webkit-background-size:cover;
+        -moz-background-size:cover;
+        -o-background-size:cover;
+        background-size:cover;
+        background-position:center;
+    }
+
+    .no-scroll .scroll-content{
+        overflow: hidden;
+    }
+
+    .logo{
+        display: block;
+        margin: auto;
+        width: 50%;
+        margin-top: 2vh;
+    }
+
+    .label{
+        background-color: rgba(255,255,255,0.0);
+
+    }
+
+    .list{
+        width:50%;
+        position: absolute;
+        right:100px;
+        margin:auto;
+    }
+
+    .btnWidth{
+        width:50%;
+  
+    }
+
+    
+
 }
