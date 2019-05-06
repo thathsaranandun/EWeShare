@@ -14,6 +14,7 @@
 
 
 <ion-content padding class="all">
+  <div class="main_div">
   <ion-list class="aligner">
       <img src="../assets/img/cp2.jpg" alt="charging point" class="cpimg"/>
       <ion-label class="lbl">Find your ideal charging site</ion-label>
@@ -42,9 +43,12 @@
     </ion-item>
   
     <ion-item>
-      <button ion-button (click)="prediction()" class="ibtn" round outline>Prediction</button>
+      <button ion-button icon-start (click)="prediction()" class="ibtn" large full color="secondary">
+        <ion-icon name="analytics"></ion-icon>
+        Prediction</button>
     </ion-item>
   </ion-col>
   
   </ion-list>
+  </div>
   </ion-content>

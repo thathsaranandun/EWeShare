@@ -14,11 +14,12 @@
 
 
 <ion-content padding>
+  <div class="main_div">
+    <img src="../../assets/img/common/add_sites.svg" alt="charging point" class="add_site_img"/>
     <ion-list>
         <ion-item-divider>Host your own charging location</ion-item-divider>
-        <img src="../assets/img/img/addsite.jpg" alt="charging point" class="cpimg"/>
+        <!--<img src="../assets/img/img/addsite.jpg" alt="charging point" class="cpimg"/>-->
 
-    
         <ion-item>
           <ion-label>Address</ion-label>
             <ion-input type="text" name="name" [(ngModel)]="address"></ion-input>
@@ -37,11 +38,12 @@
         </ion-item>
     
       </ion-list>
-    
-    
+    <button ion-button icon-start large color="primary" full (click)="addsite()">
+      <ion-icon name="locate"></ion-icon>Add Site</button>
+  </div>
 
 </ion-content>
 
 <ion-footer>
-    <button ion-button (click)="addsite()">Add Site</button>
+
   </ion-footer>

@@ -1,12 +1,18 @@
 page-prediction {
+  .main_div{
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
     .aligner{
         display: inline-block;
         left: 10%;
     }
     
-    .ibtn{
-        left: 35%;
-    }
+    //.ibtn{
+    //    left: 35%;
+    //}
     
     .cpimg{
         height: 25%;
