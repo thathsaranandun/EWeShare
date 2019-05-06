@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0607fbb-8137-41bb-8fcc-ee5fd957b9d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/map/map.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/map/map.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="a0607fbb-8137-41bb-8fcc-ee5fd957b9d9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,12 +226,12 @@
       <workItem from="1557058834896" duration="176000" />
       <workItem from="1557081945010" duration="4357000" />
       <workItem from="1557108432410" duration="9805000" />
-      <workItem from="1557142871535" duration="208000" />
+      <workItem from="1557142871535" duration="861000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55992000" />
+    <option name="totallyTimeSpent" value="56645000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
