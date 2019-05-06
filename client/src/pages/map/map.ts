@@ -19,7 +19,9 @@ export class MapPage {
   latitute: any;
   loaded: boolean = true;
   locations:any;
-  markers: object[]=[];
+  mapmarks:google.maps.Marker[]=[];
+  longitudes:any[]=[];
+  latitudes:any[]=[];
 
   constructor(public nac:NavController, public navParams: NavParams,public dataService:DataService) {
   }
@@ -34,9 +36,23 @@ export class MapPage {
 
     this.dataService.getLocations().subscribe((data:any)=>{
       console.log(data)
-      this.markers=data
-      console.log(this.markers)
-      console.log(this.markers[0])      
+      for(let i=0; i<data.locations.length; i++){
+        console.log(data.locations[i].longitude); //use i instead of 0
+        console.log(data.locations[i].latitude);
+        this.longitudes.push(data.locations[i].longitude)
+        this.latitudes.push(data.locations[i].latitude)
+        console.log('latitude:'+this.latitudes[i] +' longitude:'+this.longitudes[i])
+        let coord = new google.maps.LatLng(this.latitudes[i],this.longitudes[i]);
+        let marker : google.maps.Marker = new google.maps.Marker({
+          map:this.map,
+          position:coord,
+          icon:'../assets/img/map_marker_icon_1 - Copy.png'
+    
+        })
+        this.mapmarks.push(marker)
+        console.log(this.mapmarks[i])
+
+    }      
       
    
     })

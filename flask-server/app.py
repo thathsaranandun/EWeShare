@@ -61,7 +61,7 @@ def getlocations():
         locations = Locations.getlocations()
         print(locations)
         print('Locations retrieved from database.')
-        return locations
+        return json.dumps({'locations':locations})
 
 
 @app.route('/api/newuser', methods=['POST'])
