@@ -1,5 +1,23 @@
 page-signup {
 
+  .bg-image{
+    background-color: #25274d;
+
+  }
+  .toolbar-background-md{
+      background-color: #25274d;
+
+    }
+  .toolbar-background{
+    background-color: #25274d;
+
+  }
+  .toolbar-title-md{
+    color:#b7c4cb;
+  }
+  .toolbar-title{
+    color:#b7c4cb;
+  }
     .label{
         background-color: rgba(255,255,255,0.0);
 
@@ -9,13 +27,22 @@ page-signup {
 
     .devider{
 
-        background-color: rgb(0, 183, 255);
+        background-color:rgba(255, 240, 240, 0);
         border-color: rgba(255, 240, 240, 0);
-        -webkit-text-fill-color: black;
+        -webkit-text-fill-color: #ebebeb;
     }
 
-
-
-
+  .main_div{
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.lable-md{
+  color: white;
+}
+.avatar_img{
+  max-width: 200px;
+}
 
 }
