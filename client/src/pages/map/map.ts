@@ -156,7 +156,4 @@ export class MapPage {
 
   }
 
-  
-
-
 }
