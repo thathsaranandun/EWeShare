@@ -8,49 +8,56 @@
 
 
 <ion-content class="bg-image no-scroll" padding>
-  <img src="assets/img/img/eweshare.png" class="logo">
+  <div class="main_div">
+
+    <img src="assets/img/common/add_avatar.svg" class="avatar_img">
+
   <ion-list class="list" inset>
     <ion-item-divider class = "devider">Personal Details</ion-item-divider>
 
     <ion-item class="label">
-      <ion-label>First Name</ion-label>
-      <ion-input  type="text" name="name" [(ngModel)]="userFname"></ion-input>
+      <ion-label style="color: #ebebeb">First Name</ion-label>
+      <!--<ion-input  type="text" name="name" [(ngModel)]="userFname"></ion-input>-->
+      <ion-input style="color: #ebebeb;" type="text" [(ngModel)]="userFname" placeholder="jim"></ion-input>
     </ion-item>
 
     <ion-item class="label">
-      <ion-label >Last Name</ion-label>
-      <ion-input  type="text" [(ngModel)]="userLname" ></ion-input>
-    </ion-item>
-
-
-
-    <ion-item class="label">
-      <ion-label>Email</ion-label>
-      <ion-input  type="email" [(ngModel)]="userEmail"></ion-input>
-    </ion-item>
-
-
-    <ion-item class="label">
-      <ion-label>Username</ion-label>
-      <ion-input  type="text" [(ngModel)]="userName"></ion-input>
-    </ion-item>
-
-    <ion-item class="label">
-      <ion-label>Address</ion-label>
-      <ion-input type="text" [(ngModel)]="userAddress"></ion-input>
+      <ion-label style="color: #ebebeb">Last Name</ion-label>
+      <ion-input  style="color: #ebebeb;" type="text" [(ngModel)]="userLname" placeholder="carrey"></ion-input>
     </ion-item>
 
 
 
     <ion-item class="label">
-      <ion-label>Password</ion-label>
-      <ion-input type="password" [(ngModel)]="userPassword"></ion-input>
+      <ion-label style="color: #ebebeb">Email</ion-label>
+      <ion-input style="color: #ebebeb;" type="email" [(ngModel)]="userEmail" placeholder="yourname@hotmail.com"></ion-input>
+    </ion-item>
+
+
+    <ion-item class="label">
+      <ion-label style="color: #ebebeb">Username</ion-label>
+      <ion-input style="color: #ebebeb;" type="text" [(ngModel)]="userName" placeholder="JimCarry64"></ion-input>
+    </ion-item>
+
+    <ion-item class="label">
+      <ion-label style="color: #ebebeb">Address</ion-label>
+      <ion-input style="color: #ebebeb;" type="text" [(ngModel)]="userAddress" placeholder="4078  Burning Memory Lane,Hatboro,Pennsylvania"></ion-input>
+    </ion-item>
+
+
+
+    <ion-item class="label">
+      <ion-label style="color: #ebebeb">Password</ion-label>
+      <ion-input style="color: #ebebeb;" type="password" [(ngModel)]="userPassword" placeholder="******"></ion-input>
     </ion-item>
 
 
     </ion-list>
+    <!--<button ion-button (click)="signup()">Sign Up</button>-->
+    <button ion-button icon-start  full round color="secondary" (click)="signup()">
+      <ion-icon name="create"></ion-icon>
+      Sign Up</button>
+  </div>
 </ion-content>
 
-<ion-footer>
-  <button class="btnWidth" ion-button (click)="signup()">Sign Up</button>
-</ion-footer>
+
