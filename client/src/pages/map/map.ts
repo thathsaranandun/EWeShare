@@ -42,15 +42,26 @@ export class MapPage {
         this.longitudes.push(data.locations[i].longitude);
         this.latitudes.push(data.locations[i].latitude);
         console.log('latitude:' + this.latitudes[i] + ' longitude:' + this.longitudes[i]);
+        var available=data.locations[i].booked
+        console.log(available)
+        var markerIcon = '../assets/img/map/green_map_m.svg'
+        if(available=='yes'){
+          markerIcon='../assets/img/map/green_map_m.svg'
+        }else if(available=='no'){
+          markerIcon='../assets/img/map/orange_map_m.svg'
+        }else{
+          markerIcon='../assets/img/map/ash_map_m.svg'
+        }
         let coord = new google.maps.LatLng(this.latitudes[i], this.longitudes[i]);
         let marker: google.maps.Marker = new google.maps.Marker({
           map: this.map,
           position: coord,
-          icon: '../assets/img/map/orange_map_m.svg'
+          icon: markerIcon
 
         });
         this.mapmarks.push(marker);
         console.log(this.mapmarks[i])
+
 
       }
 
