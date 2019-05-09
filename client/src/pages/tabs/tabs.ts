@@ -1,8 +1,4 @@
 import { Component } from '@angular/core';
-
-import { MusicPage } from '../music/music';
-import { NewsPage } from '../news/news';
-import { VideoPage } from '../video/video';
 import { MapPage } from '../map/map';
 import { PredictionPage } from '../prediction/prediction';
 import { AddSitePage } from '../add-site/add-site';
