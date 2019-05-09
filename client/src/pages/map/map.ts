@@ -26,7 +26,7 @@ export class MapPage {
   constructor(public nac:NavController, public navParams: NavParams,public dataService:DataService) {
   }
 
- ngOnInit(){
+  ngOnInit(){
     this.initMap();
   }
 
