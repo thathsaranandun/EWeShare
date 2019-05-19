@@ -14,7 +14,7 @@ class AddSite:
 
     def addsite(self):
 
-        con = DatabaseConnection.connection
+        con = DatabaseConnection.connectdb()
         cur = con.cursor()
         cur.execute(
             """INSERT INTO 

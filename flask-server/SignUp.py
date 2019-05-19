@@ -17,7 +17,7 @@ class SignUp:
     def signup(self):
         message = SignUp.validateSignup(self)
         if(message['supValid']):
-            con = DatabaseConnection.connection
+            con = DatabaseConnection.connectdb()
             cur = con.cursor()
             sql="INSERT INTO users(userFName,userLName,email,username,address,password)VALUES( % s, % s, % s, % s, % s, % s)"
             cur.execute(sql,(self.fname, self.lname, self.username, self.email, self.address, self.password))
@@ -31,7 +31,7 @@ class SignUp:
     # Function for Validating the uniqueness of the email
     def validateSignup(self):
         message = {'supValid': False}
-        con = DatabaseConnection.connection
+        con = DatabaseConnection.connectdb()
         cur = con.cursor()
         sql = "SELECT * From users WHERE username=%s"
         row_count = cur.execute(sql,self.username)

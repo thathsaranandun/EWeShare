@@ -85,7 +85,7 @@ class predictor:
         #Getting the location details from database
     def locationDetails(self,predId):
         # Connect to the database
-        connection = DatabaseConnection.connection
+        connection = DatabaseConnection.connectdb()
 
         try:
             with connection.cursor() as cursor:

@@ -13,7 +13,7 @@ class LogIn:
     def login(self):
 
         # Connect to the database
-        connection = DatabaseConnection.connection
+        connection = DatabaseConnection.connectdb()
         valid='false'
 
         try:
