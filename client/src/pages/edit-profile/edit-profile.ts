@@ -83,7 +83,7 @@ export class EditProfilePage {
       
      
       
-      this.dataService.editUser(this.userId,this.userFname, this.userLname,this.userEmail, this.userName,this.userAddress, this.userPassword).subscribe((data) =>
+      this.dataService.editUser(this.userId,this.userFname, this.userLname,this.userName, this.userEmail,this.userAddress, this.userPassword).subscribe((data) =>
        {
 
         // this.userFname=this.userFname;
