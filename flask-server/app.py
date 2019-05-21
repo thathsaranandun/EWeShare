@@ -135,7 +135,7 @@ def user(id):
     if request.method == 'GET':
         print('user_id retrieved from CLIENT: ' + id)
         # Connect to the database
-        connection = DatabaseConnection.connection
+        connection = DatabaseConnection.connectdb()
         valid = 'false';
 
         try:
@@ -152,7 +152,7 @@ def user(id):
 @app.route('/update', methods=['POST'])
 def update_user():
     try:
-        con = DatabaseConnection.connection
+        con = DatabaseConnection.connectdb()
         cur = con.cursor()
         _json = request.json
         _id = _json['userId']

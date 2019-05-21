@@ -10,7 +10,7 @@ import DatabaseConnection
 def getlocations():
 
     # Connect to the database
-    connection = DatabaseConnection.connection
+    connection = DatabaseConnection.connectdb()
     valid='false'
 
     try:

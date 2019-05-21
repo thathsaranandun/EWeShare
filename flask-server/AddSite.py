@@ -14,15 +14,15 @@ class AddSite:
 
     def addsite(self):
 
-        con = DatabaseConnection.connection
+        con = DatabaseConnection.connectdb()
         cur = con.cursor()
         cur.execute(
             """INSERT INTO 
-                sites (
+                chargers (
                     address,
                     latitude,
                     longitude,
-                    userId)
+                    user_id)
             VALUES (%s,%s,%s,%s)""",
             (self.address, self.latitude, self.longitude, self.userid))
         con.commit()
