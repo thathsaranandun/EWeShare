@@ -36,7 +36,20 @@
       <ion-label class="editlabel">Authentication Key</ion-label>
       <ion-input type="text" [(ngModel)]="ard_key"></ion-input>
     </ion-item>
-    <button ion-button icon-start large full color="secondary" (click)="authenticate()">Authenticate</button>
+    <!--<button ion-button icon-start large full color="secondary" (click)="authenticate()">Authenticate</button>-->
+
+    <div class="button_div">
+      <div class="left_btn_div">
+        <button ion-button icon-start large full color="primary" (click)="authenticate()">
+          <ion-icon name="finger-print"></ion-icon>
+          Authenticate</button>
+      </div>
+      <div class="right_btn_div">
+        <button ion-button icon-start large full color="danger" (click)="logout()">
+          <ion-icon name="log-out"></ion-icon>
+          Logout</button>
+      </div>
+    </div>
 
     <div class="button_div">
       <div class="left_btn_div">
@@ -45,12 +58,12 @@
           START</button>
       </div>
       <div class="right_btn_div">
-        <button ion-button icon-start large full color="primary" (click)="stop()">
+        <button ion-button icon-start large full color="caution" (click)="stop()">
           <ion-icon name="remove-circle"></ion-icon>
           STOP</button>
       </div>
     </div>
-    <button ion-button icon-start large full color="secondary" (click)="nikanbuttoneka()">Reset</button>
+    <!--<button ion-button icon-start large full color="secondary" (click)="logout()">Logout</button>-->
 
 
 

@@ -22,7 +22,6 @@ export class ArduinoPage {
   charge:boolean=false;
   chargerId:number=9;
   cost:number=0;
-  key:string="";
   ard_key:string="";
   truth:boolean;
 
@@ -32,6 +31,7 @@ export class ArduinoPage {
         console.log(data);
           this.energy_c=data.energy_c;
           this.power_c=data.power_c;
+          this.cost=this.energy_c*75;
         
       });
     
@@ -43,16 +43,16 @@ export class ArduinoPage {
       cost:this.cost,
       energy_c:0,
       power_c:0,
-      ard_key:this.ard_key,
-      truth:false
+      ard_key:this.ard_key
     })
 
   }
 
 
-  nikanbuttoneka(){
+  logout(){
+
     this.firebase.object('/'+this.chargerId).set({
-      charging:this.charge,
+      charging:false,
       cost:this.cost,
       energy_c:0,
       power_c:0,
@@ -73,7 +73,7 @@ export class ArduinoPage {
     this.charge=true;
     this.firebase.object('/'+this.chargerId).set({
       charging:this.charge,
-      cost:this.cost,
+      cost:0,
       energy_c:0,
       power_c:0,
       ard_key:this.ard_key
@@ -83,19 +83,20 @@ export class ArduinoPage {
   }
 
 
-  }
+  };
 
   stop(){
     this.charge=false;
-    this.cost=this.power_c*75;
     this.firebase.object('/'+this.chargerId).set({
       charging:this.charge,
       cost:this.cost,
       energy_c:this.energy_c,
-      power_c:this.power_c
+      power_c:this.power_c,
+      ard_key:this.ard_key,
+      truth:this.truth
     })
 
-  }
+  };
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ArduinoPage');
@@ -105,7 +106,7 @@ export class ArduinoPage {
       energy_c:0,
       power_c:0
 
-    })
+    });
     console.log('Charging point updated in firebase')
 
   }
