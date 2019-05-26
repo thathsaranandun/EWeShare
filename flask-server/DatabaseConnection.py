@@ -1,9 +1,9 @@
 import pymysql
 
-host='localhost'
-user = 'root'
-password = ''
-db = 'sdgpdb'
+host='sql12.freemysqlhosting.net'
+user = 'sql12293406'
+password = 'zauPb3HEKt'
+db = 'sql12293406'
 
 
 def connectdb():

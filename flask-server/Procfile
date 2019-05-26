@@ -1,0 +1,2 @@
+web: gunicorn arcane-eyrie-52241.wsgi —-log-file -
+web: gunicorn app:app
