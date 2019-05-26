@@ -37,17 +37,32 @@ export class ArduinoPage {
     
   }
 
-  start(){
+  authenticate(){
     this.firebase.object('/'+this.chargerId).set({
       charging:this.charge,
       cost:this.cost,
       energy_c:0,
       power_c:0,
-      ard_key:this.ard_key
-
-
+      ard_key:this.ard_key,
+      truth:false
     })
-    
+
+  }
+
+
+  nikanbuttoneka(){
+    this.firebase.object('/'+this.chargerId).set({
+      charging:this.charge,
+      cost:this.cost,
+      energy_c:0,
+      power_c:0,
+      ard_key:'',
+      truth:false
+    })
+  }
+
+
+  start(){ 
     this.firebase.object('/'+this.chargerId).valueChanges().subscribe((data:any) =>{
       console.log(data);
         this.truth=data.truth;

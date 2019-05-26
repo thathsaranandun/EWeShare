@@ -35,7 +35,10 @@
     <ion-item>
       <ion-label class="editlabel">Authentication Key</ion-label>
       <ion-input type="text" [(ngModel)]="key"></ion-input>
+
     </ion-item>
+    <button ion-button icon-start large full color="secondary" (click)="authenticate()">Authenticate</button>
+
     <div class="button_div">
       <div class="left_btn_div">
         <button ion-button icon-start large full color="secondary" (click)="start()">
@@ -48,6 +51,8 @@
           STOP</button>
       </div>
     </div>
+    <button ion-button icon-start large full color="secondary" (click)="nikanbuttoneka()">Reset</button>
+
 
 
 
