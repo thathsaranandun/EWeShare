@@ -89,7 +89,7 @@ class predictor:
 
         try:
             with connection.cursor() as cursor:
-                sql = "SELECT * FROM chargers WHERE site_id = %s"
+                sql = "SELECT * FROM chargers WHERE charger_id = %s"
                 try:
                     cursor.execute(sql, predId)
                     result = cursor.fetchall()
