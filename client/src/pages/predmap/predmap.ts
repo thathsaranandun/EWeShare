@@ -1,3 +1,4 @@
+/// <reference types="@types/googlemaps" />
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
