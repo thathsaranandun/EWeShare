@@ -1,9 +1,9 @@
 import pymysql
 
-host='sql12.freemysqlhosting.net'
-user = 'sql12293406'
-password = 'zauPb3HEKt'
-db = 'sql12293406'
+host='remotemysql.com'
+user = 'Po4qKeSGWC'
+password = 'hBuCoUlSwr'
+db = 'Po4qKeSGWC'
 
 
 def connectdb():
