@@ -47,9 +47,9 @@ export class MapPage {
         var available=data.locations[i].booked
         console.log(available)
         var markerIcon = '../assets/img/map/green_map_m.svg'
-        if(available=='yes'){
+        if(available=='no'){
           markerIcon='../assets/img/map/green_map_m.svg'
-        }else if(available=='no'){
+        }else if(available=='yes'){
           markerIcon='../assets/img/map/orange_map_m.svg'
         }else{
           markerIcon='../assets/img/map/ash_map_m.svg'
@@ -99,7 +99,10 @@ export class MapPage {
     if(this.loaded){
       const clickableItem = document.getElementById('clickIt');
       clickableItem.addEventListener('click', () => {
-        this.nac.push(LocDetailsPage);
+        this.nac.push(LocDetailsPage,
+          {
+            'locationid':i
+          });
       });
       this.loaded=true;
     }
