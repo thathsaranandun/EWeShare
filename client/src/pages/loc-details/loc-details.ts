@@ -16,7 +16,10 @@ import { DataService } from '../../app/services/data.service';
 })
 export class LocDetailsPage {
   locationid:number;
-  location:any;
+  location:string;
+  description:string;
+  booked:string;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public dataService:DataService) {
     this.locationid=navParams.get('locationid');
@@ -24,6 +27,9 @@ export class LocDetailsPage {
     this.dataService.getLocations().subscribe((data: any) => {
       console.log(data);
       this.location=data.locations[this.locationid].address
+      this.booked=data.locations[this.locationid].booked
+      this.description=data.locations[this.locationid].c_descript
+
     });
   }
 
