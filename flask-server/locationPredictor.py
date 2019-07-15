@@ -32,7 +32,7 @@ class predictor:
         Y = array[:, 3]
 
         test_size = 0.2
-        seed = 9
+        seed = 6
         X_train, X_test, Y_train, Y_test = model_selection.train_test_split(X, Y, test_size=test_size,
                                                                             random_state=seed)
         clf = SVC(C=30.0, cache_size=200, class_weight=None, coef0=0.0,

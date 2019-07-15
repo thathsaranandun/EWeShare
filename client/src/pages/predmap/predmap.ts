@@ -47,7 +47,7 @@ export class PredmapPage {
     let marker : google.maps.Marker = new google.maps.Marker({
       map:this.map,
       position:coord,
-      icon:'../assets/img/map_marker_icon_3 - Copy.png'
+      icon:'../assets/img/map/green_map_m.svg'
 
     });
 

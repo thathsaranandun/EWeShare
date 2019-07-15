@@ -114,7 +114,8 @@ def app_result():
     if (validation['valid']):
         print("Prediction In Pursuite...")
         predictionResult = predictionObj.predict()
-        locationDetails = predictionObj.locationDetails(predictionResult[0])
+        print(int(predictionResult))
+        locationDetails = predictionObj.locationDetails(int(predictionResult))
         print('Prediction Sending...')
         return json.dumps(
             {"location": {"lat": locationDetails['lat'], "lon": locationDetails['lon']},

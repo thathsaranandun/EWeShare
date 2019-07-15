@@ -19,7 +19,7 @@ export class DataService {
    * @param chargerType 
    */
   postPrediction(time:number,kwh:number,chargerType:number){
-    return this.http.post('https://arcane-eyrie-52241.herokuapp.com/api/prediction',{
+    return this.http.post('http://localhost:5000/api/prediction',{
         'time':time,
         'kwh':kwh,
         'chargerType':chargerType
