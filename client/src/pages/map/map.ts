@@ -20,9 +20,9 @@ export class MapPage {
   loaded: boolean = true;
   locations:any;
   mapmarks: google.maps.Marker[] = [];
-  markerWindows:any[]=[];
   longitudes:any[]=[];
   latitudes:any[]=[];
+  markerWindows:any[]=[];
 
   constructor(public nac:NavController, public navParams: NavParams,public dataService:DataService) {
   }
@@ -35,6 +35,7 @@ export class MapPage {
 
   initMap() {
 
+    //Loading locations from server
     this.dataService.getLocations().subscribe((data: any) => {
       console.log(data);
       for (let i = 0; i < data.locations.length; i++) {
@@ -62,28 +63,30 @@ export class MapPage {
         });
         this.mapmarks.push(marker);
         console.log(this.mapmarks[i])
-        this.map = new google.maps.Map(this.mapElement.nativeElement, mapopts);
-        this.markerDetails(this.mapmarks[i],this.markerWindows,i)
-      }
-    });
 
-    let coord = new google.maps.LatLng(6.9407, 79.8796);
+        this.markerDetails(data,this.mapmarks[i],this.markerWindows,i)
+
+      }
+
+
+    });
+    //*---Loading map
+    let coord = new google.maps.LatLng(56.47016332, -2.920663615);//Map center on load
     let mapopts: google.maps.MapOptions = {
       center: coord,
       zoom: 18,
       mapTypeId: google.maps.MapTypeId.ROADMAP
 
     };
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapopts);
 
-    
-
-
-
+    //---*
   }
 
-  markerDetails(marker,markerWindows:any[],i){
+  //Add infowindows to markers
+  markerDetails(data,marker,markerWindows:any[],i){
   const markerWindow = new google.maps.InfoWindow({
-    content: '<h4>Charging Station 1</h4><br><p>Port Type:J1770<br>Availability: Available<br>Open Time:24/7</p><input type=submit value="View location" id="clickIt">'
+    content: '<h4>'+data.locations[i].address+'</h4><br><input type=submit value="View location" id="clickIt">'
 
   });
   markerWindows.push(markerWindow);
@@ -94,7 +97,6 @@ export class MapPage {
 
   google.maps.event.addListener(markerWindows[i], 'domready', () => {
     if(this.loaded){
-      //now my elements are ready for dom manipulation
       const clickableItem = document.getElementById('clickIt');
       clickableItem.addEventListener('click', () => {
         this.nac.push(LocDetailsPage);
@@ -103,7 +105,5 @@ export class MapPage {
     }
   });
   }
-
-
 
 }
