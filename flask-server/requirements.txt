@@ -42,5 +42,5 @@ virtualenv==16.4.3
 virtualenv-clone==0.5.3
 virtualenvwrapper==4.8.4
 virtualenvwrapper-win==1.2.5
-Werkzeug==0.15.2
+Werkzeug==0.15.3
 wrapt==1.11.1
