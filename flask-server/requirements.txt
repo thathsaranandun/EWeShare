@@ -4,7 +4,7 @@ Click==7.0
 colorama==0.4.1
 cycler==0.10.0
 Django==2.2
-djangorestframework==3.9.2
+djangorestframework==3.11.2
 Flask==1.0.2
 Flask-Cors==3.0.7
 Flask-MySQL==1.4.0
