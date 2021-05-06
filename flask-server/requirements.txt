@@ -6,7 +6,7 @@ cycler==0.10.0
 Django==2.2
 djangorestframework==3.9.2
 Flask==1.0.2
-Flask-Cors==3.0.7
+Flask-Cors==3.0.9
 Flask-MySQL==1.4.0
 gunicorn==19.9.0
 inline==0.0.1
